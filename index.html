@@ -27,18 +27,19 @@
       }
       /* Define icon content using pseudo-elements */
       .lucide-briefcase::before { content: "\e9ae"; } /* Business */
-      .lucide-megaphone::before { content: "\eb1e"; } /* Announce */
-      .lucide-wrench::before { content: "\ec5a"; } /* Settings2 */
-      .lucide-check-circle::before { content: "\e9ce"; } /* CheckCircle */
-      .lucide-award::before { content: "\e998"; } /* Award */
-      .lucide-users::before { content: "\ec4f"; } /* Users */
+      .lucide-image::before { content: "\eaad"; } /* Image */
+      .lucide-shield-check::before { content: "\ebda"; } /* ShieldCheck */
+      /* .lucide-wrench::before { content: "\ec5a"; } /* Settings2 (Removed from old section) */
+      /* .lucide-award::before { content: "\e998"; } /* Award (Removed from old section) */
+      /* .lucide-users::before { content: "\ec4f"; } /* Users (Removed from old section) */
+      .lucide-clock::before { content: "\ea2e"; } /* Clock (New) */
+      .lucide-zap::before { content: "\ec6b"; } /* Zap (New - for Expertise/Efficiency) */
+      .lucide-dollar-sign::before { content: "\ea56"; } /* DollarSign (New) */
+      .lucide-bar-chart-3::before { content: "\e9a4"; } /* BarChart3 (New - for Scalability) */
       .lucide-mail::before { content: "\eb16"; } /* Mail */
       .lucide-send::before { content: "\ebc4"; } /* Send */
       .lucide-menu::before { content: "\eb1f"; } /* Menu */
       .lucide-x::before { content: "\ec60"; } /* X */
-      .lucide-target::before { content: "\ec24"; } /* Target */
-      .lucide-trending-up::before { content: "\ec3c"; } /* TrendingUp */
-      .lucide-shield-check::before { content: "\ebda"; } /* ShieldCheck */
       .lucide-languages::before { content: "\eaee"; } /* Languages */
 
 
@@ -48,21 +49,21 @@
       }
       body {
         font-family: 'Inter', sans-serif;
-        background-color: #f8fafc; /* Slightly off-white background */
-        color: #1f2937; /* Darker gray text */
+        background-color: #f8fafc;
+        color: #1f2937;
       }
       /* Custom gradient for hero */
       .hero-gradient {
-        background: linear-gradient(135deg, #e0f2fe 0%, #bae6fd 100%); /* Lighter, softer blue gradient */
+        background: linear-gradient(135deg, #e0f2fe 0%, #bae6fd 100%);
       }
       /* Custom gradient for buttons */
       .btn-gradient {
-        background: linear-gradient(to right, #2563eb, #3b82f6); /* Blue gradient */
+        background: linear-gradient(to right, #2563eb, #3b82f6);
         transition: all 0.3s ease;
         box-shadow: 0 4px 6px -1px rgba(59, 130, 246, 0.3), 0 2px 4px -1px rgba(59, 130, 246, 0.2);
       }
       .btn-gradient:hover {
-        background: linear-gradient(to right, #1d4ed8, #2563eb); /* Darker blue gradient on hover */
+        background: linear-gradient(to right, #1d4ed8, #2563eb);
         transform: translateY(-2px);
         box-shadow: 0 10px 15px -3px rgba(59, 130, 246, 0.4), 0 4px 6px -2px rgba(59, 130, 246, 0.3);
       }
@@ -74,12 +75,14 @@
         transform: translateY(-5px);
         box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
       }
-       /* Highlight item style */
-      .highlight-item {
-        transition: background-color 0.3s ease;
+       /* Benefit item style */
+      .benefit-item {
+        transition: background-color 0.3s ease, transform 0.3s ease;
+         border: 1px solid #e5e7eb; /* Light border */
       }
-      .highlight-item:hover {
-         background-color: #e0f2fe; /* Light blue bg on hover */
+      .benefit-item:hover {
+         background-color: #f9fafb; /* Very light gray bg on hover */
+         transform: translateY(-3px);
       }
       /* Form input styling */
       .form-input {
@@ -92,20 +95,20 @@
       }
       /* Style for the confirmation message */
       #confirmation-message {
-          display: none; /* Hidden by default */
+          display: none;
           padding: 1rem;
           margin-top: 1.5rem;
           border-radius: 0.5rem;
-          background-color: #d1fae5; /* Green background */
-          color: #065f46; /* Dark green text */
-          border: 1px solid #6ee7b7; /* Green border */
+          background-color: #d1fae5;
+          color: #065f46;
+          border: 1px solid #6ee7b7;
           text-align: center;
           font-weight: 500;
       }
       /* Profile picture style */
       .profile-picture {
-          object-fit: cover; /* Ensure image covers the area without distortion */
-          border: 4px solid white; /* Optional: white border around picture */
+          object-fit: cover;
+          border: 4px solid white;
       }
       /* Language switcher styles */
       .lang-switch button {
@@ -116,12 +119,12 @@
           border: 1px solid transparent;
       }
       .lang-switch button.active {
-          background-color: #3b82f6; /* Blue background for active */
+          background-color: #3b82f6;
           color: white;
       }
        .lang-switch button:not(.active) {
-          background-color: #e5e7eb; /* Gray background for inactive */
-          color: #4b5563; /* Gray text */
+          background-color: #e5e7eb;
+          color: #4b5563;
           border-color: #d1d5db;
        }
        .lang-switch button:not(.active):hover {
@@ -139,7 +142,7 @@
                 <a href="#home" data-lang-key="navHome" class="text-gray-600 hover:text-blue-600 font-medium transition duration-300">Home</a>
                 <a href="#services" data-lang-key="navServices" class="text-gray-600 hover:text-blue-600 font-medium transition duration-300">Services</a>
                 <a href="#about" data-lang-key="navAbout" class="text-gray-600 hover:text-blue-600 font-medium transition duration-300">About</a>
-                <a href="#highlights" data-lang-key="navResults" class="text-gray-600 hover:text-blue-600 font-medium transition duration-300">Results</a>
+                <a href="#highlights" data-lang-key="navBenefits" class="text-gray-600 hover:text-blue-600 font-medium transition duration-300">Benefits</a>
                 <a href="#contact" data-lang-key="navContact" class="text-gray-600 hover:text-blue-600 font-medium transition duration-300">Contact</a>
                 <div class="lang-switch flex space-x-2 border-l pl-6 border-gray-300">
                     <button id="lang-en" aria-label="Switch to English">EN</button>
@@ -162,54 +165,53 @@
             <a href="#home" data-lang-key="navHomeMobile" class="block px-6 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition duration-300 font-medium">Home</a>
             <a href="#services" data-lang-key="navServicesMobile" class="block px-6 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition duration-300 font-medium">Services</a>
             <a href="#about" data-lang-key="navAboutMobile" class="block px-6 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition duration-300 font-medium">About</a>
-            <a href="#highlights" data-lang-key="navResultsMobile" class="block px-6 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition duration-300 font-medium">Results</a>
+            <a href="#highlights" data-lang-key="navBenefitsMobile" class="block px-6 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition duration-300 font-medium">Benefits</a>
             <a href="#contact" data-lang-key="navContactMobile" class="block px-6 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition duration-300 font-medium">Contact</a>
         </div>
     </header>
 
     <main>
         <section id="home" class="hero-gradient py-24 md:py-40 relative overflow-hidden">
-             <div class="absolute top-0 left-0 w-64 h-64 bg-blue-200 rounded-full opacity-30 -translate-x-16 -translate-y-16 filter blur-3xl"></div>
+            <div class="absolute top-0 left-0 w-64 h-64 bg-blue-200 rounded-full opacity-30 -translate-x-16 -translate-y-16 filter blur-3xl"></div>
             <div class="absolute bottom-0 right-0 w-72 h-72 bg-indigo-200 rounded-full opacity-30 translate-x-16 translate-y-16 filter blur-3xl"></div>
-
             <div class="container mx-auto px-6 text-center relative z-10">
                 <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-gray-800 mb-5 leading-tight tracking-tight">
-                    <span data-lang-key="heroTitlePre">Stop Juggling Amazon Tasks, Start</span> <span class="text-blue-600" data-lang-key="heroTitleHighlight">Scaling Your Brand</span>
+                    <span data-lang-key="heroTitlePre">Ne Jonglez Plus avec Amazon,</span> <span class="text-blue-600" data-lang-key="heroTitleHighlight">Accélérez Votre Croissance</span>
                 </h1>
                 <p data-lang-key="heroSubtitle" class="text-lg md:text-xl text-gray-700 mb-10 max-w-3xl mx-auto">
-                    As your dedicated Amazon Virtual Assistant with 4+ years of experience, I handle the complexities of Vendor and Seller Central so you can focus on growth.
+                    En tant qu'Assistant Virtuel Amazon dédié, fort de plus de 4 ans d'expérience, je maîtrise les complexités de Vendor et Seller Central afin que vous puissiez vous concentrer sur votre croissance.
                 </p>
                 <a href="#contact" data-lang-key="heroButton" class="inline-block btn-gradient text-white font-semibold py-4 px-10 rounded-lg shadow-lg hover:shadow-xl transition duration-300 text-lg">
-                    Unlock Your Amazon Potential
+                    Libérez Votre Potentiel Amazon
                 </a>
             </div>
         </section>
 
         <section id="services" class="py-20 md:py-28 bg-white">
             <div class="container mx-auto px-6">
-                <h2 data-lang-key="servicesTitle" class="text-3xl md:text-4xl font-bold text-center text-gray-800 mb-6">Your Strategic Amazon Partner</h2>
-                <p data-lang-key="servicesSubtitle" class="text-center text-lg text-gray-600 mb-16 max-w-2xl mx-auto">From daily operations to strategic growth, I provide comprehensive support tailored to your brand's needs.</p>
+                <h2 data-lang-key="servicesTitle" class="text-3xl md:text-4xl font-bold text-center text-gray-800 mb-6">Votre Partenaire Stratégique Amazon</h2>
+                <p data-lang-key="servicesSubtitle" class="text-center text-lg text-gray-600 mb-16 max-w-2xl mx-auto">De la gestion quotidienne à la croissance stratégique, j'offre un support complet et adapté aux besoins de votre marque.</p>
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
                     <div class="service-card bg-gray-50 p-8 rounded-xl shadow-sm text-center border border-gray-200">
                         <div class="mb-5 inline-block p-4 bg-blue-100 rounded-full">
                            <span class="lucide lucide-briefcase text-3xl text-blue-600"></span>
                         </div>
-                        <h3 data-lang-key="service1Title" class="text-xl font-semibold text-gray-800 mb-3">End-to-End Account Management</h3>
-                        <p data-lang-key="service1Desc" class="text-gray-600">Seamless handling of catalog management, inventory, invoicing, dispute resolution, and more. Consider it done.</p>
+                        <h3 data-lang-key="service1Title" class="text-xl font-semibold text-gray-800 mb-3">Gestion de Compte de A à Z</h3>
+                        <p data-lang-key="service1Desc" class="text-gray-600">Prise en charge complète de la gestion du catalogue, des stocks, de la facturation, de la résolution des litiges, et bien plus encore. Considérez que c'est réglé.</p>
                     </div>
                     <div class="service-card bg-gray-50 p-8 rounded-xl shadow-sm text-center border border-gray-200">
                          <div class="mb-5 inline-block p-4 bg-blue-100 rounded-full">
-                           <span class="lucide lucide-target text-3xl text-blue-600"></span>
+                           <span class="lucide lucide-image text-3xl text-blue-600"></span>
                         </div>
-                        <h3 data-lang-key="service2Title" class="text-xl font-semibold text-gray-800 mb-3">Results-Driven PPC Advertising</h3>
-                        <p data-lang-key="service2Desc" class="text-gray-600">Strategic campaign creation and management designed to maximize your visibility, clicks, and conversions.</p>
+                        <h3 data-lang-key="service2Title" class="text-xl font-semibold text-gray-800 mb-3">Optimisation Visuelle des Fiches Produits</h3>
+                        <p data-lang-key="service2Desc" class="text-gray-600">Création d'images produit percutantes, de visuels d'ambiance et de contenu A+/EBC qui captent l'attention et stimulent les conversions.</p>
                     </div>
                     <div class="service-card bg-gray-50 p-8 rounded-xl shadow-sm text-center border border-gray-200">
                          <div class="mb-5 inline-block p-4 bg-blue-100 rounded-full">
                            <span class="lucide lucide-shield-check text-3xl text-blue-600"></span>
                         </div>
-                        <h3 data-lang-key="service3Title" class="text-xl font-semibold text-gray-800 mb-3">Proactive Support & Troubleshooting</h3>
-                        <p data-lang-key="service3Desc" class="text-gray-600">Swift resolution of technical glitches and effective communication with Amazon support to ensure smooth operations.</p>
+                        <h3 data-lang-key="service3Title" class="text-xl font-semibold text-gray-800 mb-3">Support et Dépannage Proactifs</h3>
+                        <p data-lang-key="service3Desc" class="text-gray-600">Résolution rapide des problèmes techniques et communication efficace avec le support Amazon pour garantir la fluidité de vos opérations.</p>
                     </div>
                 </div>
             </div>
@@ -230,46 +232,50 @@
                         >
                         </div>
                     <div class="text-center md:text-left">
-                        <h2 data-lang-key="aboutTitle" class="text-3xl md:text-4xl font-bold text-gray-800 mb-6">From Agent to Amazon Expert</h2>
+                        <h2 data-lang-key="aboutTitle" class="text-3xl md:text-4xl font-bold text-gray-800 mb-6">Mon Parcours d'Expert Amazon</h2>
                         <p data-lang-key="aboutDesc" class="text-lg text-gray-700 mb-6 leading-relaxed">
-                            My journey started at Smartelia, diving deep into the Amazon ecosystem. I quickly progressed from customer service to Senior Marketplace Trainer, leading teams and managing diverse accounts for a top French agency. This hands-on experience across Vendor and Seller Central equips me to tackle any challenge.
+                            Mon parcours a débuté chez Smartelia, où je me suis immergé au cœur de l'écosystème Amazon. J'ai rapidement évolué du service client au poste de Formateur Marketplace Senior, encadrant des équipes et gérant divers comptes pour une agence française reconnue. Cette expérience concrète sur Vendor et Seller Central m'a doté des compétences nécessaires pour relever tous les défis.
                         </p>
                         <blockquote class="relative p-4 text-lg italic border-l-4 border-blue-400 bg-blue-100 text-blue-800 quote my-8 rounded-r-lg md:ml-0 md:mr-auto max-w-md">
-                            <p data-lang-key="aboutQuote" class="mb-2">"I’m passionate about transforming Amazon challenges into growth opportunities for your brand."</p>
+                            <p data-lang-key="aboutQuote" class="mb-2">« Ma passion est de transformer les défis Amazon en opportunités de croissance pour votre marque. »</p>
                             <cite class="block font-semibold not-italic text-base">- Thony M.</cite>
                         </blockquote>
-                         <p data-lang-key="aboutMission" class="text-lg text-gray-700 font-medium">
-                           My mission is clear: <span class="font-semibold text-blue-600" data-lang-key="aboutMissionHighlight">Optimize your Amazon presence for peak performance and effortless management.</span>
-                        </p>
-                    </div>
+                         </div>
                  </div>
             </div>
         </section>
 
         <section id="highlights" class="py-20 md:py-28 bg-white">
             <div class="container mx-auto px-6">
-                <h2 data-lang-key="resultsTitle" class="text-3xl md:text-4xl font-bold text-center text-gray-800 mb-6">Proven Results & Expertise</h2>
-                 <p data-lang-key="resultsSubtitle" class="text-center text-lg text-gray-600 mb-16 max-w-2xl mx-auto">Leveraging years of experience to deliver tangible outcomes for your Amazon business.</p>
-                <div class="max-w-3xl mx-auto space-y-6">
-                    <div class="highlight-item flex items-center space-x-5 bg-gray-50 p-6 rounded-lg border border-gray-200">
-                        <span class="lucide lucide-briefcase text-3xl text-green-600 flex-shrink-0 bg-green-100 p-3 rounded-full"></span>
+                <h2 data-lang-key="whyHireTitle" class="text-3xl md:text-4xl font-bold text-center text-gray-800 mb-6">Pourquoi Collaborer avec un Assistant Virtuel Spécialisé Amazon ?</h2>
+                 <p data-lang-key="whyHireSubtitle" class="text-center text-lg text-gray-600 mb-16 max-w-3xl mx-auto">Libérez votre temps et profitez d'une expertise pointue pour naviguer les complexités d'Amazon et accélérer la croissance de votre marque.</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                    <div class="benefit-item flex items-start space-x-5 bg-gray-50 p-6 rounded-lg">
+                        <span class="lucide lucide-clock text-3xl text-blue-600 flex-shrink-0 bg-blue-100 p-3 rounded-full mt-1"></span>
                         <div>
-                            <h4 data-lang-key="result1Title" class="font-semibold text-lg text-gray-800">Managed 10+ Diverse Brands</h4>
-                            <p data-lang-key="result1Desc" class="text-gray-600">Successfully navigated the unique needs and challenges of multiple brands simultaneously on Amazon.</p>
+                            <h4 data-lang-key="benefit1Title" class="font-semibold text-lg text-gray-800 mb-1">Gagnez un Temps Précieux</h4>
+                            <p data-lang-key="benefit1Desc" class="text-gray-600">Déléguez les tâches chronophages et concentrez-vous sur les décisions stratégiques pour la croissance de votre entreprise.</p>
                         </div>
                     </div>
-                     <div class="highlight-item flex items-center space-x-5 bg-gray-50 p-6 rounded-lg border border-gray-200">
-                        <span class="lucide lucide-wrench text-3xl text-green-600 flex-shrink-0 bg-green-100 p-3 rounded-full"></span>
+                     <div class="benefit-item flex items-start space-x-5 bg-gray-50 p-6 rounded-lg">
+                        <span class="lucide lucide-zap text-3xl text-blue-600 flex-shrink-0 bg-blue-100 p-3 rounded-full mt-1"></span>
                         <div>
-                            <h4 data-lang-key="result2Title" class="font-semibold text-lg text-gray-800">Mastered Complex Problem-Solving</h4>
-                            <p data-lang-key="result2Desc" class="text-gray-600">Resolved intricate issues including shipment discrepancies, pricing errors, listing suppressions, and compliance cases.</p>
+                            <h4 data-lang-key="benefit2Title" class="font-semibold text-lg text-gray-800 mb-1">Bénéficiez d'une Expertise Pointue</h4>
+                            <p data-lang-key="benefit2Desc" class="text-gray-600">Profitez d'une connaissance approfondie de Seller/Vendor Central, des meilleures pratiques et d'un dépannage efficace.</p>
                         </div>
                     </div>
-                     <div class="highlight-item flex items-center space-x-5 bg-gray-50 p-6 rounded-lg border border-gray-200">
-                        <span class="lucide lucide-users text-3xl text-green-600 flex-shrink-0 bg-green-100 p-3 rounded-full"></span>
+                     <div class="benefit-item flex items-start space-x-5 bg-gray-50 p-6 rounded-lg">
+                        <span class="lucide lucide-dollar-sign text-3xl text-blue-600 flex-shrink-0 bg-blue-100 p-3 rounded-full mt-1"></span>
                         <div>
-                            <h4 data-lang-key="result3Title" class="font-semibold text-lg text-gray-800">Trained & Mentored 30+ Specialists</h4>
-                            <p data-lang-key="result3Desc" class="text-gray-600">Developed and empowered numerous individuals to become proficient Amazon marketplace experts.</p>
+                            <h4 data-lang-key="benefit3Title" class="font-semibold text-lg text-gray-800 mb-1">Solution Économique</h4>
+                            <p data-lang-key="benefit3Desc" class="text-gray-600">Accédez à un support expert sans les coûts fixes liés à l'embauche d'un employé à temps plein.</p>
+                        </div>
+                    </div>
+                     <div class="benefit-item flex items-start space-x-5 bg-gray-50 p-6 rounded-lg">
+                        <span class="lucide lucide-bar-chart-3 text-3xl text-blue-600 flex-shrink-0 bg-blue-100 p-3 rounded-full mt-1"></span>
+                        <div>
+                            <h4 data-lang-key="benefit4Title" class="font-semibold text-lg text-gray-800 mb-1">Support Flexible et Évolutif</h4>
+                            <p data-lang-key="benefit4Desc" class="text-gray-600">Ajustez le niveau d'assistance en fonction de l'évolution de vos besoins commerciaux et des pics saisonniers.</p>
                         </div>
                     </div>
                 </div>
@@ -279,55 +285,54 @@
         <section id="contact" class="py-20 md:py-28 bg-gradient-to-br from-gray-800 to-gray-900 text-white">
             <div class="container mx-auto px-6">
                 <div class="max-w-3xl mx-auto text-center">
-                    <h2 data-lang-key="contactTitle" class="text-3xl md:text-4xl font-bold mb-6">Ready to Elevate Your Amazon Game?</h2>
+                    <h2 data-lang-key="contactTitle" class="text-3xl md:text-4xl font-bold mb-6">Prêt à Optimiser Votre Performance sur Amazon ?</h2>
                     <p data-lang-key="contactSubtitle" class="text-lg text-gray-300 mb-10">
-                        Let's discuss your specific needs and how my expertise can drive growth and efficiency for your brand. Fill out the form below or email me directly.
+                        Discutons de vos besoins spécifiques et découvrez comment mon expertise peut stimuler la croissance et l'efficacité de votre marque. Remplissez le formulaire ci-dessous ou contactez-moi directement par e-mail.
                     </p>
                 </div>
-
                 <div class="max-w-xl mx-auto bg-white p-8 md:p-10 rounded-lg shadow-xl">
                     <form id="contact-form" class="space-y-6">
                         <div>
-                            <label for="name" data-lang-key="formNameLabel" class="block text-sm font-medium text-gray-700 mb-1">Full Name</label>
+                            <label for="name" data-lang-key="formNameLabel" class="block text-sm font-medium text-gray-700 mb-1">Nom complet</label>
                             <input type="text" name="name" id="name" required
                                    class="form-input block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm text-gray-900 placeholder-gray-400 focus:ring-blue-500 focus:border-blue-500"
                                    data-lang-placeholder="formNamePlaceholder"
-                                   placeholder="Your Name">
+                                   placeholder="Votre nom">
                         </div>
                         <div>
-                            <label for="email" data-lang-key="formEmailLabel" class="block text-sm font-medium text-gray-700 mb-1">Email Address</label>
+                            <label for="email" data-lang-key="formEmailLabel" class="block text-sm font-medium text-gray-700 mb-1">Adresse e-mail</label>
                             <input type="email" name="email" id="email" required
                                    class="form-input block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm text-gray-900 placeholder-gray-400 focus:ring-blue-500 focus:border-blue-500"
                                    data-lang-placeholder="formEmailPlaceholder"
-                                   placeholder="you@example.com">
+                                   placeholder="vous@exemple.com">
                         </div>
                          <div>
-                            <label for="subject" data-lang-key="formSubjectLabel" class="block text-sm font-medium text-gray-700 mb-1">Subject</label>
+                            <label for="subject" data-lang-key="formSubjectLabel" class="block text-sm font-medium text-gray-700 mb-1">Objet</label>
                             <input type="text" name="subject" id="subject" required
                                    class="form-input block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm text-gray-900 placeholder-gray-400 focus:ring-blue-500 focus:border-blue-500"
                                    data-lang-placeholder="formSubjectPlaceholder"
-                                   placeholder="How can I help?">
+                                   placeholder="Objet de votre demande">
                         </div>
                         <div>
                             <label for="message" data-lang-key="formMessageLabel" class="block text-sm font-medium text-gray-700 mb-1">Message</label>
                             <textarea id="message" name="message" rows="4" required
                                       class="form-input block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm text-gray-900 placeholder-gray-400 focus:ring-blue-500 focus:border-blue-500"
                                       data-lang-placeholder="formMessagePlaceholder"
-                                      placeholder="Tell me about your Amazon business and needs..."></textarea>
+                                      placeholder="Décrivez votre activité Amazon et vos besoins..."></textarea>
                         </div>
                         <div>
                             <button type="submit"
                                     class="w-full flex justify-center items-center space-x-2 btn-gradient text-white font-semibold py-3 px-8 rounded-lg shadow-md hover:shadow-lg transition duration-300 text-lg focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
                                 <span class="lucide lucide-send text-xl"></span>
-                                <span data-lang-key="formSubmitButton">Send Message</span>
+                                <span data-lang-key="formSubmitButton">Envoyer le message</span>
                             </button>
                         </div>
                     </form>
                     <div id="confirmation-message" data-lang-key="formConfirmation">
-                        Thanks for reaching out! I'll get back to you shortly.
+                        Merci pour votre message ! Je reviendrai vers vous dans les plus brefs délais.
                     </div>
                      <p class="mt-8 text-center text-gray-600">
-                        <span data-lang-key="contactOrEmail">Or email me directly at:</span> <a href="mailto:thonymaherison@gmail.com" class="font-medium text-blue-600 hover:text-blue-700 hover:underline">thonymaherison@gmail.com</a>
+                        <span data-lang-key="contactOrEmail">Ou contactez-moi directement par e-mail :</span> <a href="mailto:thonymaherison@gmail.con" class="font-medium text-blue-600 hover:text-blue-700 hover:underline">thonymaherison@gmail.con</a>
                     </p>
                 </div>
             </div>
@@ -337,144 +342,118 @@
     <footer class="bg-gray-900 text-gray-400 py-10">
         <div class="container mx-auto px-6 text-center">
             <p class="font-semibold text-lg mb-2">Thony M.</p>
-            <p data-lang-key="footerSubtitle" class="text-sm mb-4">Expert Amazon Virtual Assistant</p>
+            <p data-lang-key="footerSubtitle" class="text-sm mb-4">Assistant Virtuel Amazon Expert</p>
             <div class="flex justify-center space-x-6 mb-4">
-                 <a href="#home" data-lang-key="footerNavHome" class="hover:text-white transition duration-300">Home</a>
+                 <a href="#home" data-lang-key="footerNavHome" class="hover:text-white transition duration-300">Accueil</a>
                  <a href="#services" data-lang-key="footerNavServices" class="hover:text-white transition duration-300">Services</a>
-                 <a href="#about" data-lang-key="footerNavAbout" class="hover:text-white transition duration-300">About</a>
-                 <a href="#highlights" data-lang-key="footerNavResults" class="hover:text-white transition duration-300">Results</a>
+                 <a href="#about" data-lang-key="footerNavAbout" class="hover:text-white transition duration-300">À Propos</a>
+                 <a href="#highlights" data-lang-key="footerNavBenefits" class="hover:text-white transition duration-300">Avantages</a>
                  <a href="#contact" data-lang-key="footerNavContact" class="hover:text-white transition duration-300">Contact</a>
             </div>
-            <p data-lang-key="footerCopyright" class="text-sm">&copy; <script>document.write(new Date().getFullYear())</script> Thony M. All rights reserved.</p>
+            <p data-lang-key="footerCopyright" class="text-sm">&copy; <script>document.write(new Date().getFullYear())</script> Thony M. Tous droits réservés.</p>
         </div>
     </footer>
 
     <script>
-        // --- Translations Object ---
+        // --- Translations Object (UPDATED) ---
         const translations = {
-            // English translations (unchanged)
             en: {
                 pageTitle: "Thony M. - Expert Amazon Virtual Assistant",
-                navHome: "Home",
-                navServices: "Services",
-                navAbout: "About",
-                navResults: "Results",
-                navContact: "Contact",
-                navHomeMobile: "Home",
-                navServicesMobile: "Services",
-                navAboutMobile: "About",
-                navResultsMobile: "Results",
-                navContactMobile: "Contact",
-                heroTitlePre: "Stop Juggling Amazon Tasks, Start",
-                heroTitleHighlight: "Scaling Your Brand",
+                // Updated Nav Link Key
+                navHome: "Home", navServices: "Services", navAbout: "About", navBenefits: "Benefits", navContact: "Contact",
+                navHomeMobile: "Home", navServicesMobile: "Services", navAboutMobile: "About", navBenefitsMobile: "Benefits", navContactMobile: "Contact",
+                heroTitlePre: "Stop Juggling Amazon Tasks, Start", heroTitleHighlight: "Scaling Your Brand",
                 heroSubtitle: "As your dedicated Amazon Virtual Assistant with 4+ years of experience, I handle the complexities of Vendor and Seller Central so you can focus on growth.",
                 heroButton: "Unlock Your Amazon Potential",
                 servicesTitle: "Your Strategic Amazon Partner",
                 servicesSubtitle: "From daily operations to strategic growth, I provide comprehensive support tailored to your brand's needs.",
                 service1Title: "End-to-End Account Management",
                 service1Desc: "Seamless handling of catalog management, inventory, invoicing, dispute resolution, and more. Consider it done.",
-                service2Title: "Results-Driven PPC Advertising",
-                service2Desc: "Strategic campaign creation and management designed to maximize your visibility, clicks, and conversions.",
+                service2Title: "Listing Visual Optimization",
+                service2Desc: "Creating compelling product images, lifestyle shots, and A+/EBC content that capture attention and drive conversions.",
                 service3Title: "Proactive Support & Troubleshooting",
                 service3Desc: "Swift resolution of technical glitches and effective communication with Amazon support to ensure smooth operations.",
                 aboutTitle: "From Agent to Amazon Expert",
                 aboutDesc: "My journey started at Smartelia, diving deep into the Amazon ecosystem. I quickly progressed from customer service to Senior Marketplace Trainer, leading teams and managing diverse accounts for a top French agency. This hands-on experience across Vendor and Seller Central equips me to tackle any challenge.",
                 aboutQuote: "“I’m passionate about transforming Amazon challenges into growth opportunities for your brand.”",
-                aboutMission: "My mission is clear:",
-                aboutMissionHighlight: "Optimize your Amazon presence for peak performance and effortless management.",
+                // Removed aboutMission & aboutMissionHighlight
                 profileAlt: "Profile picture of Thony M.",
-                resultsTitle: "Proven Results & Expertise",
-                resultsSubtitle: "Leveraging years of experience to deliver tangible outcomes for your Amazon business.",
-                result1Title: "Managed 10+ Diverse Brands",
-                result1Desc: "Successfully navigated the unique needs and challenges of multiple brands simultaneously on Amazon.",
-                result2Title: "Mastered Complex Problem-Solving",
-                result2Desc: "Resolved intricate issues including shipment discrepancies, pricing errors, listing suppressions, and compliance cases.",
-                result3Title: "Trained & Mentored 30+ Specialists",
-                result3Desc: "Developed and empowered numerous individuals to become proficient Amazon marketplace experts.",
+                // New "Why Hire" Section Keys
+                whyHireTitle: "Why Partner with a Specialized Amazon VA?",
+                whyHireSubtitle: "Free up your time and leverage expert knowledge to navigate Amazon's complexities and accelerate your brand's growth.",
+                benefit1Title: "Save Valuable Time",
+                benefit1Desc: "Delegate time-consuming tasks and focus on strategic decisions for your business growth.",
+                benefit2Title: "Leverage Specialized Expertise",
+                benefit2Desc: "Benefit from in-depth knowledge of Seller/Vendor Central, best practices, and effective troubleshooting.",
+                benefit3Title: "Cost-Effective Solution",
+                benefit3Desc: "Access expert support without the overhead costs associated with hiring a full-time employee.",
+                benefit4Title: "Flexible & Scalable Support",
+                benefit4Desc: "Adjust the level of assistance based on your evolving business needs and seasonal demands.",
+                // End New Section Keys
                 contactTitle: "Ready to Elevate Your Amazon Game?",
                 contactSubtitle: "Let's discuss your specific needs and how my expertise can drive growth and efficiency for your brand. Fill out the form below or email me directly.",
-                formNameLabel: "Full Name",
-                formNamePlaceholder: "Your Name",
-                formEmailLabel: "Email Address",
-                formEmailPlaceholder: "you@example.com",
-                formSubjectLabel: "Subject",
-                formSubjectPlaceholder: "How can I help?",
-                formMessageLabel: "Message",
-                formMessagePlaceholder: "Tell me about your Amazon business and needs...",
+                formNameLabel: "Full Name", formNamePlaceholder: "Your Name",
+                formEmailLabel: "Email Address", formEmailPlaceholder: "you@example.com",
+                formSubjectLabel: "Subject", formSubjectPlaceholder: "How can I help?",
+                formMessageLabel: "Message", formMessagePlaceholder: "Tell me about your Amazon business and needs...",
                 formSubmitButton: "Send Message",
                 formConfirmation: "Thanks for reaching out! I'll get back to you shortly.",
                 contactOrEmail: "Or email me directly at:",
                 footerSubtitle: "Expert Amazon Virtual Assistant",
-                footerNavHome: "Home",
-                footerNavServices: "Services",
-                footerNavAbout: "About",
-                footerNavResults: "Results",
-                footerNavContact: "Contact",
+                // Updated Nav Link Key
+                footerNavHome: "Home", footerNavServices: "Services", footerNavAbout: "About", footerNavBenefits: "Benefits", footerNavContact: "Contact",
                 footerCopyright: "All rights reserved."
             },
-             // ------------- REVISED French translations -------------
             fr: {
                 pageTitle: "Thony M. - Assistant Virtuel Amazon Expert",
-                navHome: "Accueil",
-                navServices: "Services",
-                navAbout: "À Propos",
-                navResults: "Résultats",
-                navContact: "Contact",
-                navHomeMobile: "Accueil",
-                navServicesMobile: "Services",
-                navAboutMobile: "À Propos",
-                navResultsMobile: "Résultats",
-                navContactMobile: "Contact",
-                heroTitlePre: "Ne Jonglez Plus avec Amazon,",
-                heroTitleHighlight: "Accélérez Votre Croissance", // Changed for more impact
+                 // Updated Nav Link Key
+                navHome: "Accueil", navServices: "Services", navAbout: "À Propos", navBenefits: "Avantages", navContact: "Contact",
+                navHomeMobile: "Accueil", navServicesMobile: "Services", navAboutMobile: "À Propos", navBenefitsMobile: "Avantages", navContactMobile: "Contact",
+                heroTitlePre: "Ne Jonglez Plus avec Amazon,", heroTitleHighlight: "Accélérez Votre Croissance",
                 heroSubtitle: "En tant qu'Assistant Virtuel Amazon dédié, fort de plus de 4 ans d'expérience, je maîtrise les complexités de Vendor et Seller Central afin que vous puissiez vous concentrer sur votre croissance.",
                 heroButton: "Libérez Votre Potentiel Amazon",
                 servicesTitle: "Votre Partenaire Stratégique Amazon",
                 servicesSubtitle: "De la gestion quotidienne à la croissance stratégique, j'offre un support complet et adapté aux besoins de votre marque.",
-                service1Title: "Gestion de Compte de A à Z", // Changed for clarity
+                service1Title: "Gestion de Compte de A à Z",
                 service1Desc: "Prise en charge complète de la gestion du catalogue, des stocks, de la facturation, de la résolution des litiges, et bien plus encore. Considérez que c'est réglé.",
-                service2Title: "Publicité PPC Orientée Résultats", // Changed slightly
-                service2Desc: "Création et gestion de campagnes stratégiques conçues pour maximiser votre visibilité, attirer les clics pertinents et augmenter vos conversions.",
-                service3Title: "Support et Dépannage Proactifs", // Changed order
+                service2Title: "Optimisation Visuelle des Fiches Produits",
+                service2Desc: "Création d'images produit percutantes, de visuels d'ambiance et de contenu A+/EBC qui captent l'attention et stimulent les conversions.",
+                service3Title: "Support et Dépannage Proactifs",
                 service3Desc: "Résolution rapide des problèmes techniques et communication efficace avec le support Amazon pour garantir la fluidité de vos opérations.",
-                aboutTitle: "Mon Parcours d'Expert Amazon", // Changed slightly
+                aboutTitle: "Mon Parcours d'Expert Amazon",
                 aboutDesc: "Mon parcours a débuté chez Smartelia, où je me suis immergé au cœur de l'écosystème Amazon. J'ai rapidement évolué du service client au poste de Formateur Marketplace Senior, encadrant des équipes et gérant divers comptes pour une agence française reconnue. Cette expérience concrète sur Vendor et Seller Central m'a doté des compétences nécessaires pour relever tous les défis.",
                 aboutQuote: "« Ma passion est de transformer les défis Amazon en opportunités de croissance pour votre marque. »",
-                aboutMission: "Ma mission est claire :",
-                aboutMissionHighlight: "Optimiser votre présence Amazon pour une performance maximale et une gestion simplifiée.",
+                 // Removed aboutMission & aboutMissionHighlight
                 profileAlt: "Photo de profil de Thony M.",
-                resultsTitle: "Expertise Reconnue & Résultats Prouvés", // Changed order
-                resultsSubtitle: "Fort de plusieurs années d'expérience, je m'engage à fournir des résultats tangibles pour votre activité sur Amazon.",
-                result1Title: "Gestion de +10 Marques Variées", // Changed slightly
-                result1Desc: "Gestion réussie des besoins et défis spécifiques de plusieurs marques en simultané sur Amazon.",
-                result2Title: "Résolution de Problèmes Complexes", // Changed slightly
-                result2Desc: "Résolution de problèmes complexes, incluant les écarts d'expédition, les erreurs de prix, les suppressions de fiches produits et les cas de non-conformité.",
-                result3Title: "Formation & Mentorat de +30 Spécialistes",
-                result3Desc: "Formé et accompagné plus de 30 collaborateurs pour devenir des experts compétents de la marketplace Amazon.",
-                contactTitle: "Prêt à Optimiser Votre Performance sur Amazon ?", // Changed slightly
+                 // New "Why Hire" Section Keys
+                whyHireTitle: "Pourquoi Collaborer avec un Assistant Virtuel Spécialisé Amazon ?",
+                whyHireSubtitle: "Libérez votre temps et profitez d'une expertise pointue pour naviguer les complexités d'Amazon et accélérer la croissance de votre marque.",
+                benefit1Title: "Gagnez un Temps Précieux",
+                benefit1Desc: "Déléguez les tâches chronophages et concentrez-vous sur les décisions stratégiques pour la croissance de votre entreprise.",
+                benefit2Title: "Bénéficiez d'une Expertise Pointue",
+                benefit2Desc: "Profitez d'une connaissance approfondie de Seller/Vendor Central, des meilleures pratiques et d'un dépannage efficace.",
+                benefit3Title: "Solution Économique",
+                benefit3Desc: "Accédez à un support expert sans les coûts fixes liés à l'embauche d'un employé à temps plein.",
+                benefit4Title: "Support Flexible et Évolutif",
+                benefit4Desc: "Ajustez le niveau d'assistance en fonction de l'évolution de vos besoins commerciaux et des pics saisonniers.",
+                 // End New Section Keys
+                contactTitle: "Prêt à Optimiser Votre Performance sur Amazon ?",
                 contactSubtitle: "Discutons de vos besoins spécifiques et découvrez comment mon expertise peut stimuler la croissance et l'efficacité de votre marque. Remplissez le formulaire ci-dessous ou contactez-moi directement par e-mail.",
-                formNameLabel: "Nom complet",
-                formNamePlaceholder: "Votre nom",
-                formEmailLabel: "Adresse e-mail",
-                formEmailPlaceholder: "vous@exemple.com",
-                formSubjectLabel: "Objet",
-                formSubjectPlaceholder: "Objet de votre demande",
-                formMessageLabel: "Message",
-                formMessagePlaceholder: "Décrivez votre activité Amazon et vos besoins...",
+                formNameLabel: "Nom complet", formNamePlaceholder: "Votre nom",
+                formEmailLabel: "Adresse e-mail", formEmailPlaceholder: "vous@exemple.com",
+                formSubjectLabel: "Objet", formSubjectPlaceholder: "Objet de votre demande",
+                formMessageLabel: "Message", formMessagePlaceholder: "Décrivez votre activité Amazon et vos besoins...",
                 formSubmitButton: "Envoyer le message",
                 formConfirmation: "Merci pour votre message ! Je reviendrai vers vous dans les plus brefs délais.",
                 contactOrEmail: "Ou contactez-moi directement par e-mail :",
                 footerSubtitle: "Assistant Virtuel Amazon Expert",
-                footerNavHome: "Accueil",
-                footerNavServices: "Services",
-                footerNavAbout: "À Propos",
-                footerNavResults: "Résultats",
-                footerNavContact: "Contact",
+                 // Updated Nav Link Key
+                footerNavHome: "Accueil", footerNavServices: "Services", footerNavAbout: "À Propos", footerNavBenefits: "Avantages", footerNavContact: "Contact",
                 footerCopyright: "Tous droits réservés."
             }
         };
 
-        // --- Language Switching Logic ---
+        // --- Language Switching Logic (Unchanged) ---
         const langEnBtn = document.getElementById('lang-en');
         const langFrBtn = document.getElementById('lang-fr');
         const langEnMobileBtn = document.getElementById('lang-en-mobile');
@@ -488,22 +467,16 @@
                 console.error(`Language ${lang} not found in translations.`);
                 return;
             }
-
-            // Update page language attribute and title
             document.documentElement.lang = lang;
             document.title = translations[lang].pageTitle;
-
-            // Update text content
             allLangElements.forEach(el => {
                 const key = el.dataset.langKey;
-                if (translations[lang][key] !== undefined) { // Check if key exists
+                if (translations[lang][key] !== undefined) {
                     el.textContent = translations[lang][key];
                 } else {
                      console.warn(`Translation key "${key}" not found for language "${lang}" in text content.`);
                 }
             });
-
-             // Update placeholders
             allPlaceholderElements.forEach(el => {
                 const key = el.dataset.langPlaceholder;
                  if (translations[lang][key] !== undefined) {
@@ -512,8 +485,6 @@
                      console.warn(`Translation key "${key}" not found for language "${lang}" in placeholder.`);
                 }
             });
-
-             // Update alt text
             allAltElements.forEach(el => {
                 const key = el.dataset.langAlt;
                  if (translations[lang][key] !== undefined) {
@@ -522,44 +493,31 @@
                      console.warn(`Translation key "${key}" not found for language "${lang}" in alt text.`);
                 }
             });
-
-
-            // Update button active states
             [langEnBtn, langEnMobileBtn].forEach(btn => btn.classList.toggle('active', lang === 'en'));
             [langFrBtn, langFrMobileBtn].forEach(btn => btn.classList.toggle('active', lang === 'fr'));
-
-            // Store preference
             localStorage.setItem('preferredLanguage', lang);
         }
 
-        // --- Event Listeners ---
+        // --- Event Listeners (Unchanged) ---
         [langEnBtn, langEnMobileBtn].forEach(btn => btn.addEventListener('click', () => setLanguage('en')));
         [langFrBtn, langFrMobileBtn].forEach(btn => btn.addEventListener('click', () => setLanguage('fr')));
 
-
-        // --- Initial Language Load ---
+        // --- Initial Language Load (Unchanged) ---
         const preferredLanguage = localStorage.getItem('preferredLanguage');
-        // Check browser language preference if no local storage preference
-        const browserLang = navigator.language.split('-')[0]; // Get 'fr' from 'fr-FR'
-
-        // Set initial language: 1st localStorage, 2nd browser preference if FR, else default EN
+        const browserLang = navigator.language.split('-')[0];
         const initialLang = preferredLanguage || (browserLang === 'fr' ? 'fr' : 'en');
         setLanguage(initialLang);
 
-
-        // --- Mobile Menu Toggle ---
-        // (Code unchanged from previous version)
+        // --- Mobile Menu Toggle (Unchanged) ---
         const menuBtn = document.getElementById('menu-btn');
         const mobileMenu = document.getElementById('mobile-menu');
         const openIcon = document.getElementById('menu-open-icon');
         const closeIcon = document.getElementById('menu-close-icon');
-
         menuBtn.addEventListener('click', () => {
             mobileMenu.classList.toggle('hidden');
             openIcon.classList.toggle('hidden');
             closeIcon.classList.toggle('hidden');
         });
-
         const mobileLinks = mobileMenu.querySelectorAll('a');
         mobileLinks.forEach(link => {
             link.addEventListener('click', () => {
@@ -569,29 +527,23 @@
             });
         });
 
-        // --- Contact Form Handling (Front-end simulation) ---
-        // (Code unchanged from previous version, includes language-specific alert)
+        // --- Contact Form Handling (Unchanged) ---
         const contactForm = document.getElementById('contact-form');
         const confirmationMessage = document.getElementById('confirmation-message');
-
         contactForm.addEventListener('submit', (event) => {
             event.preventDefault();
-
             const name = document.getElementById('name').value.trim();
             const email = document.getElementById('email').value.trim();
             const subject = document.getElementById('subject').value.trim();
             const message = document.getElementById('message').value.trim();
-
             if (name === '' || email === '' || subject === '' || message === '') {
                  const currentLang = document.documentElement.lang || 'en';
                  const alertMsg = currentLang === 'fr' ? 'Veuillez remplir tous les champs.' : 'Please fill out all fields.';
                 alert(alertMsg);
                 return;
             }
-
             contactForm.reset();
             confirmationMessage.style.display = 'block';
-
             setTimeout(() => {
                 confirmationMessage.style.display = 'none';
             }, 5000);
