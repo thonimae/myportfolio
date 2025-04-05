@@ -9,37 +9,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
-      @font-face {
-        font-family: 'LucideIcons';
-        src: url(https://cdn.jsdelivr.net/npm/lucide-static@latest/font/Lucide.ttf) format('truetype');
-      }
-      .lucide {
-        font-family: 'LucideIcons';
-        font-style: normal;
-        font-weight: normal;
-        font-variant: normal;
-        text-rendering: auto;
-        line-height: 1;
-        -webkit-font-smoothing: antialiased;
-        -moz-osx-font-smoothing: grayscale;
-        display: inline-block; /* Ensure icons align correctly */
-        vertical-align: middle; /* Align icons vertically */
-      }
-      /* Define icon content using pseudo-elements */
-      .lucide-briefcase::before { content: "\e9ae"; }
-      .lucide-image::before { content: "\eaad"; }
-      .lucide-shield-check::before { content: "\ebda"; }
-      .lucide-clock::before { content: "\ea2e"; }
-      .lucide-zap::before { content: "\ec6b"; }
-      .lucide-dollar-sign::before { content: "\ea56"; }
-      .lucide-bar-chart-3::before { content: "\e9a4"; }
-      .lucide-mail::before { content: "\eb16"; }
-      .lucide-send::before { content: "\ebc4"; }
-      .lucide-menu::before { content: "\eb1f"; }
-      .lucide-x::before { content: "\ec60"; }
-      .lucide-languages::before { content: "\eaee"; }
-
-
       /* Basic smooth scroll */
       html {
         scroll-behavior: smooth;
@@ -90,19 +59,6 @@
         box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
         outline: none;
       }
-      /* Style for the confirmation message (Now handled by Formspree, can be removed or kept for custom styling if needed) */
-      #confirmation-message {
-          /* display: none; */ /* No longer needed for JS control */
-          /* Styling can be kept if you customize Formspree's success page/message */
-          padding: 1rem;
-          margin-top: 1.5rem;
-          border-radius: 0.5rem;
-          background-color: #d1fae5;
-          color: #065f46;
-          border: 1px solid #6ee7b7;
-          text-align: center;
-          font-weight: 500;
-      }
       /* Profile picture style */
       .profile-picture {
           object-fit: cover;
@@ -115,6 +71,7 @@
           font-weight: 500;
           transition: background-color 0.3s ease, color 0.3s ease;
           border: 1px solid transparent;
+          cursor: pointer;
       }
       .lang-switch button.active {
           background-color: #3b82f6;
@@ -128,6 +85,54 @@
        .lang-switch button:not(.active):hover {
           background-color: #d1d5db;
        }
+       /* Style for inline SVG icons */
+       .icon-inline {
+           display: inline-block;
+           vertical-align: middle;
+           width: 1.25em; /* Adjust size as needed */
+           height: 1.25em;
+           margin-right: 0.25em; /* Space between icon and text */
+       }
+       .icon-button {
+            width: 1.25rem; /* 20px */
+            height: 1.25rem;
+            display: inline-block;
+            vertical-align: middle;
+       }
+       .icon-large {
+            width: 1.875rem; /* 30px */
+            height: 1.875rem;
+            display: inline-block;
+            vertical-align: middle;
+       }
+       .icon-xl {
+            width: 2.25rem; /* 36px */
+            height: 2.25rem;
+            display: inline-block;
+            vertical-align: middle;
+       }
+       .icon-menu {
+           width: 1.875rem; /* 30px */
+           height: 1.875rem;
+       }
+        .icon-footer {
+            width: 1.5rem; /* 24px */
+            height: 1.5rem;
+            display: inline-block;
+            vertical-align: middle;
+            /* Applying color using filter to simulate text-gray-400 */
+            filter: invert(79%) sepia(11%) saturate(169%) hue-rotate(176deg) brightness(89%) contrast(86%);
+        }
+        .icon-footer:hover {
+             /* Applying color using filter to simulate hover:text-white */
+            filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(110deg) brightness(104%) contrast(104%);
+        }
+        .icon-color-inherit {
+            /* Use this class for icons that should inherit text color (like inside buttons) */
+             filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(110deg) brightness(104%) contrast(104%); /* White */
+        }
+
+
     </style>
 </head>
 <body class="antialiased">
@@ -152,8 +157,8 @@
                     <button id="lang-fr-mobile" aria-label="Switch to French" class="text-sm">FR</button>
                 </div>
                 <button id="menu-btn" aria-label="Toggle Menu" class="text-gray-700 hover:text-blue-600 focus:outline-none transition duration-300">
-                    <span id="menu-open-icon" class="lucide lucide-menu text-3xl"></span>
-                    <span id="menu-close-icon" class="lucide lucide-x text-3xl hidden"></span>
+                    <img id="menu-open-icon" src="https://cdn.jsdelivr.net/npm/lucide-static@latest/icons/menu.svg" alt="Menu" class="icon-menu">
+                    <img id="menu-close-icon" src="https://cdn.jsdelivr.net/npm/lucide-static@latest/icons/x.svg" alt="Close Menu" class="icon-menu hidden">
                 </button>
             </div>
         </nav>
@@ -190,21 +195,21 @@
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
                     <div class="service-card bg-gray-50 p-8 rounded-xl shadow-sm text-center border border-gray-200">
                         <div class="mb-5 inline-block p-4 bg-blue-100 rounded-full">
-                           <span class="lucide lucide-briefcase text-3xl text-blue-600"></span>
+                           <img src="https://cdn.jsdelivr.net/npm/lucide-static@latest/icons/briefcase.svg" alt="Icône Mallette" class="icon-xl text-blue-600">
                         </div>
                         <h3 data-lang-key="service1Title" class="text-xl font-semibold text-gray-800 mb-3">Gestion de Compte de A à Z</h3>
                         <p data-lang-key="service1Desc" class="text-gray-600">Prise en charge complète de la gestion du catalogue, des stocks, de la facturation, de la résolution des litiges, et bien plus encore. Considérez que c'est réglé.</p>
                     </div>
                     <div class="service-card bg-gray-50 p-8 rounded-xl shadow-sm text-center border border-gray-200">
                          <div class="mb-5 inline-block p-4 bg-blue-100 rounded-full">
-                           <span class="lucide lucide-image text-3xl text-blue-600"></span>
+                            <img src="https://cdn.jsdelivr.net/npm/lucide-static@latest/icons/image.svg" alt="Icône Image" class="icon-xl text-blue-600">
                         </div>
                         <h3 data-lang-key="service2Title" class="text-xl font-semibold text-gray-800 mb-3">Optimisation Visuelle des Fiches Produits</h3>
                         <p data-lang-key="service2Desc" class="text-gray-600">Création d'images produit percutantes, de visuels d'ambiance et de contenu A+/EBC qui captent l'attention et stimulent les conversions.</p>
                     </div>
                     <div class="service-card bg-gray-50 p-8 rounded-xl shadow-sm text-center border border-gray-200">
                          <div class="mb-5 inline-block p-4 bg-blue-100 rounded-full">
-                           <span class="lucide lucide-shield-check text-3xl text-blue-600"></span>
+                            <img src="https://cdn.jsdelivr.net/npm/lucide-static@latest/icons/shield-check.svg" alt="Icône Bouclier Vérifié" class="icon-xl text-blue-600">
                         </div>
                         <h3 data-lang-key="service3Title" class="text-xl font-semibold text-gray-800 mb-3">Support et Dépannage Proactifs</h3>
                         <p data-lang-key="service3Desc" class="text-gray-600">Résolution rapide des problèmes techniques et communication efficace avec le support Amazon pour garantir la fluidité de vos opérations.</p>
@@ -219,8 +224,7 @@
                     <div class="flex-shrink-0 w-48 h-48 md:w-64 md:h-64 lg:w-72 lg:h-72">
                         <img
                             id="profile-img"
-                            src="https://placehold.co/300x300/E0F2FE/3B82F6?text=Thony+M."
-                            alt="Profile picture of Thony M."
+                            src="images/profile.jpg" alt="Photo de profil de Thony M."
                             data-lang-alt="profileAlt"
                             class="profile-picture w-full h-full rounded-full shadow-lg"
                             onerror="this.onerror=null; this.src='https://placehold.co/300x300/cccccc/666666?text=Photo';"
@@ -247,28 +251,28 @@
                  <p data-lang-key="whyHireSubtitle" class="text-center text-lg text-gray-600 mb-16 max-w-3xl mx-auto">Libérez votre temps et profitez d'une expertise pointue pour naviguer les complexités d'Amazon et accélérer la croissance de votre marque.</p>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
                     <div class="benefit-item flex items-start space-x-5 bg-gray-50 p-6 rounded-lg">
-                        <span class="lucide lucide-clock text-3xl text-blue-600 flex-shrink-0 bg-blue-100 p-3 rounded-full mt-1"></span>
+                        <img src="https://cdn.jsdelivr.net/npm/lucide-static@latest/icons/clock.svg" alt="Icône Horloge" class="icon-large text-blue-600 flex-shrink-0 bg-blue-100 p-3 rounded-full mt-1">
                         <div>
                             <h4 data-lang-key="benefit1Title" class="font-semibold text-lg text-gray-800 mb-1">Gagnez un Temps Précieux</h4>
                             <p data-lang-key="benefit1Desc" class="text-gray-600">Déléguez les tâches chronophages et concentrez-vous sur les décisions stratégiques pour la croissance de votre entreprise.</p>
                         </div>
                     </div>
                     <div class="benefit-item flex items-start space-x-5 bg-gray-50 p-6 rounded-lg">
-                        <span class="lucide lucide-zap text-3xl text-blue-600 flex-shrink-0 bg-blue-100 p-3 rounded-full mt-1"></span>
+                         <img src="https://cdn.jsdelivr.net/npm/lucide-static@latest/icons/zap.svg" alt="Icône Éclair" class="icon-large text-blue-600 flex-shrink-0 bg-blue-100 p-3 rounded-full mt-1">
                         <div>
                             <h4 data-lang-key="benefit2Title" class="font-semibold text-lg text-gray-800 mb-1">Bénéficiez d'une Expertise Pointue</h4>
                             <p data-lang-key="benefit2Desc" class="text-gray-600">Profitez d'une connaissance approfondie de Seller/Vendor Central, des meilleures pratiques et d'un dépannage efficace.</p>
                         </div>
                     </div>
                     <div class="benefit-item flex items-start space-x-5 bg-gray-50 p-6 rounded-lg">
-                        <span class="lucide lucide-dollar-sign text-3xl text-blue-600 flex-shrink-0 bg-blue-100 p-3 rounded-full mt-1"></span>
+                         <img src="https://cdn.jsdelivr.net/npm/lucide-static@latest/icons/dollar-sign.svg" alt="Icône Dollar" class="icon-large text-blue-600 flex-shrink-0 bg-blue-100 p-3 rounded-full mt-1">
                         <div>
                             <h4 data-lang-key="benefit3Title" class="font-semibold text-lg text-gray-800 mb-1">Solution Économique</h4>
                             <p data-lang-key="benefit3Desc" class="text-gray-600">Accédez à un support expert sans les coûts fixes liés à l'embauche d'un employé à temps plein.</p>
                         </div>
                     </div>
                     <div class="benefit-item flex items-start space-x-5 bg-gray-50 p-6 rounded-lg">
-                        <span class="lucide lucide-bar-chart-3 text-3xl text-blue-600 flex-shrink-0 bg-blue-100 p-3 rounded-full mt-1"></span>
+                         <img src="https://cdn.jsdelivr.net/npm/lucide-static@latest/icons/bar-chart-3.svg" alt="Icône Graphique" class="icon-large text-blue-600 flex-shrink-0 bg-blue-100 p-3 rounded-full mt-1">
                         <div>
                             <h4 data-lang-key="benefit4Title" class="font-semibold text-lg text-gray-800 mb-1">Support Flexible et Évolutif</h4>
                             <p data-lang-key="benefit4Desc" class="text-gray-600">Ajustez le niveau d'assistance en fonction de l'évolution de vos besoins commerciaux et des pics saisonniers.</p>
@@ -286,13 +290,11 @@
                         Discutons de vos besoins spécifiques et découvrez comment mon expertise peut stimuler la croissance et l'efficacité de votre marque. Remplissez le formulaire ci-dessous ou contactez-moi directement par e-mail.
                     </p>
                 </div>
-
                 <div class="max-w-xl mx-auto bg-white p-8 md:p-10 rounded-lg shadow-xl">
                     <form id="contact-form"
-                          action="https://formspree.io/f/xovekoaz"  पालिकेReplace with your Formspree URL
+                          action="https://formspree.io/f/xovekoaz"  पालिकेRemplacez par votre URL Formspree
                           method="POST"
                           class="space-y-6">
-
                         <div>
                             <label for="name" data-lang-key="formNameLabel" class="block text-sm font-medium text-gray-700 mb-1">Nom complet</label>
                             <input type="text" name="name" id="name" required
@@ -309,7 +311,7 @@
                         </div>
                          <div>
                             <label for="subject" data-lang-key="formSubjectLabel" class="block text-sm font-medium text-gray-700 mb-1">Objet</label>
-                             <input type="text" name="_subject" id="subject" required
+                            <input type="text" name="_subject" id="subject" required
                                    class="form-input block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm text-gray-900 placeholder-gray-400 focus:ring-blue-500 focus:border-blue-500"
                                    data-lang-placeholder="formSubjectPlaceholder"
                                    placeholder="Objet de votre demande">
@@ -322,16 +324,15 @@
                                       placeholder="Décrivez votre activité Amazon et vos besoins..."></textarea>
                         </div>
                         <input type="text" name="_gotcha" style="display:none">
-
                         <div>
                             <button type="submit"
                                     class="w-full flex justify-center items-center space-x-2 btn-gradient text-white font-semibold py-3 px-8 rounded-lg shadow-md hover:shadow-lg transition duration-300 text-lg focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
-                                <span class="lucide lucide-send text-xl"></span>
+                                 <img src="https://cdn.jsdelivr.net/npm/lucide-static@latest/icons/send.svg" alt="Icône Envoyer" class="icon-button icon-color-inherit">
                                 <span data-lang-key="formSubmitButton">Envoyer le message</span>
                             </button>
                         </div>
                     </form>
-                    <p class="mt-8 text-center text-gray-600">
+                     <p class="mt-8 text-center text-gray-600">
                         <span data-lang-key="contactOrEmail">Ou contactez-moi directement par e-mail :</span> <a href="mailto:thonymaherison@gmail.com" class="font-medium text-blue-600 hover:text-blue-700 hover:underline">thonymaherison@gmail.com</a>
                     </p>
                 </div>
@@ -341,21 +342,26 @@
 
     <footer class="bg-gray-900 text-gray-400 py-10">
         <div class="container mx-auto px-6 text-center">
-            <p class="font-semibold text-lg mb-2">Thony M.</p>
+            <p class="font-semibold text-lg mb-2 text-white">Thony M.</p>
             <p data-lang-key="footerSubtitle" class="text-sm mb-4">Assistant Virtuel Amazon Expert</p>
-            <div class="flex justify-center space-x-6 mb-4">
+            <div class="flex justify-center space-x-6 mb-6">
                  <a href="#home" data-lang-key="footerNavHome" class="hover:text-white transition duration-300">Accueil</a>
                  <a href="#services" data-lang-key="footerNavServices" class="hover:text-white transition duration-300">Services</a>
                  <a href="#about" data-lang-key="footerNavAbout" class="hover:text-white transition duration-300">À Propos</a>
                  <a href="#highlights" data-lang-key="footerNavBenefits" class="hover:text-white transition duration-300">Avantages</a>
                  <a href="#contact" data-lang-key="footerNavContact" class="hover:text-white transition duration-300">Contact</a>
             </div>
-            <p data-lang-key="footerCopyright" class="text-sm">© <script>document.write(new Date().getFullYear())</script> Thony M. Tous droits réservés.</p>
+            <div class="mb-6">
+                <a href="https://www.linkedin.com/in/thonymaherison" target="_blank" rel="noopener noreferrer" class="inline-block hover:opacity-80 transition duration-300" aria-label="Profil LinkedIn">
+                     <img src="https://cdn.jsdelivr.net/npm/lucide-static@latest/icons/linkedin.svg" alt="LinkedIn" class="icon-footer">
+                </a>
+            </div>
+            <p data-lang-key="footerCopyright" class="text-sm">&copy; <script>document.write(new Date().getFullYear())</script> Thony M. Tous droits réservés.</p>
         </div>
     </footer>
 
     <script>
-        // --- Translations Object (Unchanged from previous version) ---
+        // --- Translations Object ---
         const translations = {
              en: {
                 pageTitle: "Thony M. - Expert Amazon Virtual Assistant",
@@ -393,7 +399,7 @@
                 formSubjectLabel: "Subject", formSubjectPlaceholder: "How can I help?",
                 formMessageLabel: "Message", formMessagePlaceholder: "Tell me about your Amazon business and needs...",
                 formSubmitButton: "Send Message",
-                formConfirmation: "Thanks for reaching out! I'll get back to you shortly.", // Kept in case needed for Formspree custom page
+                formConfirmation: "Thanks for reaching out! I'll get back to you shortly.",
                 contactOrEmail: "Or email me directly at:",
                 footerSubtitle: "Expert Amazon Virtual Assistant",
                 footerNavHome: "Home", footerNavServices: "Services", footerNavAbout: "About", footerNavBenefits: "Benefits", footerNavContact: "Contact",
@@ -435,7 +441,7 @@
                 formSubjectLabel: "Objet", formSubjectPlaceholder: "Objet de votre demande",
                 formMessageLabel: "Message", formMessagePlaceholder: "Décrivez votre activité Amazon et vos besoins...",
                 formSubmitButton: "Envoyer le message",
-                formConfirmation: "Merci pour votre message ! Je reviendrai vers vous dans les plus brefs délais.", // Kept in case needed for Formspree custom page
+                formConfirmation: "Merci pour votre message ! Je reviendrai vers vous dans les plus brefs délais.",
                 contactOrEmail: "Ou contactez-moi directement par e-mail :",
                 footerSubtitle: "Assistant Virtuel Amazon Expert",
                 footerNavHome: "Accueil", footerNavServices: "Services", footerNavAbout: "À Propos", footerNavBenefits: "Avantages", footerNavContact: "Contact",
@@ -443,8 +449,7 @@
             }
         };
 
-        // --- Language Switching Logic (Unchanged) ---
-        // ... (Identical to previous version) ...
+        // --- Language Switching Logic ---
         const langEnBtn = document.getElementById('lang-en');
         const langFrBtn = document.getElementById('lang-fr');
         const langEnMobileBtn = document.getElementById('lang-en-mobile');
@@ -495,9 +500,7 @@
         [langEnBtn, langEnMobileBtn].forEach(btn => btn.addEventListener('click', () => setLanguage('en')));
         [langFrBtn, langFrMobileBtn].forEach(btn => btn.addEventListener('click', () => setLanguage('fr')));
 
-
-        // --- Mobile Menu Toggle (Unchanged) ---
-        // ... (Identical to previous version) ...
+        // --- Mobile Menu Toggle ---
         const menuBtn = document.getElementById('menu-btn');
         const mobileMenu = document.getElementById('mobile-menu');
         const openIcon = document.getElementById('menu-open-icon');
@@ -516,43 +519,9 @@
             });
         });
 
-
-        // --- Contact Form Handling (REMOVED - Now handled by Formspree) ---
-        /*
-        const contactForm = document.getElementById('contact-form');
-        const confirmationMessage = document.getElementById('confirmation-message');
-
-        contactForm.addEventListener('submit', (event) => {
-            event.preventDefault(); // Prevent actual form submission
-
-            // Basic validation (check if fields are filled)
-            const name = document.getElementById('name').value.trim();
-            const email = document.getElementById('email').value.trim();
-            const subject = document.getElementById('subject').value.trim();
-            const message = document.getElementById('message').value.trim();
-
-            if (name === '' || email === '' || subject === '' || message === '') {
-                 const currentLang = document.documentElement.lang || 'en';
-                 const alertMsg = currentLang === 'fr' ? 'Veuillez remplir tous les champs.' : 'Please fill out all fields.';
-                alert(alertMsg);
-                return; // Stop if validation fails
-            }
-
-            // console.log('Form submitted (simulated):', { name, email, subject, message });
-
-            contactForm.reset(); // Reset form fields
-            confirmationMessage.style.display = 'block'; // Show confirmation
-
-            // Optional: Hide confirmation message after a few seconds
-            setTimeout(() => {
-                confirmationMessage.style.display = 'none';
-            }, 5000); // Hide after 5 seconds
-        });
-        */
+        // --- Contact Form JS Removed (Handled by Formspree) ---
 
     </script>
 
 </body>
 </html>
-
-
