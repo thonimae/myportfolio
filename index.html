@@ -330,6 +330,7 @@
                                       data-lang-placeholder="formMessagePlaceholder"
                                       placeholder="Tell me about your Amazon business and needs..."></textarea>
                         </div>
+                        <input type="hidden" name="_next" id="form-next">
                         <input type="text" name="_gotcha" style="display:none">
                         <div>
                             <button type="submit"
@@ -526,7 +527,8 @@
             });
         });
 
-        // --- Contact Form JS Removed (Handled by Formspree) ---
+        // --- Set Formspree redirect back to current page ---
+        document.getElementById('form-next').value = window.location.href;
 
     </script>
 
