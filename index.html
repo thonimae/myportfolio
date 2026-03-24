@@ -26,10 +26,20 @@
         background-color: #f8fafc;
         color: #1f2937;
       }
-      /* Custom gradient for hero */
+
+      /* Hero gradient — deep navy */
       .hero-gradient {
-        background: linear-gradient(135deg, #e0f2fe 0%, #bae6fd 100%);
+        background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 55%, #1e40af 100%);
       }
+
+      /* Animated hero blobs */
+      @keyframes blob-float {
+        0%, 100% { transform: translate(0, 0) scale(1); }
+        50% { transform: translate(0, -20px) scale(1.06); }
+      }
+      .blob-1 { animation: blob-float 9s ease-in-out infinite; }
+      .blob-2 { animation: blob-float 11s ease-in-out infinite reverse; }
+
       /* Custom gradient for buttons */
       .btn-gradient {
         background: linear-gradient(to right, #2563eb, #3b82f6);
@@ -41,23 +51,53 @@
         transform: translateY(-2px);
         box-shadow: 0 10px 15px -3px rgba(59, 130, 246, 0.4), 0 4px 6px -2px rgba(59, 130, 246, 0.3);
       }
+
+      /* Section heading accent underline */
+      .heading-accent {
+        width: 3.5rem;
+        height: 0.25rem;
+        background: linear-gradient(to right, #2563eb, #6366f1);
+        border-radius: 9999px;
+        margin: 0.6rem auto 1.5rem;
+      }
+      .heading-accent-left {
+        width: 3.5rem;
+        height: 0.25rem;
+        background: linear-gradient(to right, #2563eb, #6366f1);
+        border-radius: 9999px;
+        margin: 0.6rem 0 1.5rem;
+      }
+
       /* Service card hover effect */
       .service-card {
         transition: transform 0.3s ease, box-shadow 0.3s ease;
       }
       .service-card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        transform: translateY(-6px);
+        box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.06);
       }
-       /* Benefit item style */
+
+      /* Service card colored top borders */
+      .card-accent-blue  { border-top: 4px solid #3b82f6; }
+      .card-accent-indigo { border-top: 4px solid #6366f1; }
+      .card-accent-violet { border-top: 4px solid #8b5cf6; }
+
+      /* Benefit item style */
       .benefit-item {
-        transition: background-color 0.3s ease, transform 0.3s ease;
-         border: 1px solid #e5e7eb; /* Light border */
+        transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+        border: 1px solid #e5e7eb;
       }
       .benefit-item:hover {
-         background-color: #f9fafb; /* Very light gray bg on hover */
-         transform: translateY(-3px);
+        background-color: #eff6ff;
+        transform: translateY(-3px);
+        box-shadow: 0 8px 16px -4px rgba(59, 130, 246, 0.12);
       }
+
+      /* Fix benefit icon color — make blue */
+      .benefit-icon {
+        filter: invert(37%) sepia(98%) saturate(1234%) hue-rotate(203deg) brightness(97%) contrast(96%);
+      }
+
       /* Form input styling */
       .form-input {
         transition: border-color 0.3s ease, box-shadow 0.3s ease;
@@ -67,11 +107,83 @@
         box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
         outline: none;
       }
-      /* Profile picture style */
+
+      /* Profile picture — colored ring */
       .profile-picture {
-          object-fit: cover;
-          border: 4px solid white;
+        object-fit: cover;
+        border: 3px solid white;
+        box-shadow: 0 0 0 4px #3b82f6, 0 20px 40px -10px rgba(59, 130, 246, 0.35);
       }
+
+      /* Enhanced blockquote */
+      .quote-enhanced {
+        position: relative;
+        padding: 1.25rem 1.5rem 1.25rem 2rem;
+        background: linear-gradient(135deg, #eff6ff, #eef2ff);
+        border-left: 4px solid #3b82f6;
+        border-radius: 0 0.75rem 0.75rem 0;
+      }
+      .quote-enhanced::before {
+        content: '\201C';
+        position: absolute;
+        top: -0.75rem;
+        left: 0.6rem;
+        font-size: 5rem;
+        color: #3b82f6;
+        opacity: 0.25;
+        line-height: 1;
+        font-family: Georgia, serif;
+        pointer-events: none;
+      }
+
+      /* Scroll fade-up animations */
+      .fade-up {
+        opacity: 0;
+        transform: translateY(28px);
+        transition: opacity 0.65s ease, transform 0.65s ease;
+      }
+      .fade-up.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      .fade-up-delay-1 { transition-delay: 0.1s; }
+      .fade-up-delay-2 { transition-delay: 0.2s; }
+      .fade-up-delay-3 { transition-delay: 0.3s; }
+      .fade-up-delay-4 { transition-delay: 0.4s; }
+
+      /* Nav active link indicator */
+      .nav-active {
+        color: #2563eb !important;
+        position: relative;
+      }
+      .nav-active::after {
+        content: '';
+        position: absolute;
+        bottom: -4px;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background: linear-gradient(to right, #2563eb, #6366f1);
+        border-radius: 9999px;
+      }
+
+      /* Contact stats badges */
+      .stat-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.45rem 1rem;
+        background: rgba(255, 255, 255, 0.1);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        border-radius: 9999px;
+        font-size: 0.875rem;
+        color: white;
+        backdrop-filter: blur(4px);
+      }
+      .stat-badge img {
+        filter: invert(100%) sepia(0%) saturate(0%) brightness(110%);
+      }
+
       /* Language switcher styles */
       .lang-switch button {
           padding: 0.25rem 0.5rem;
@@ -85,61 +197,59 @@
           background-color: #3b82f6;
           color: white;
       }
-       .lang-switch button:not(.active) {
+      .lang-switch button:not(.active) {
           background-color: #e5e7eb;
           color: #4b5563;
           border-color: #d1d5db;
-       }
-       .lang-switch button:not(.active):hover {
+      }
+      .lang-switch button:not(.active):hover {
           background-color: #d1d5db;
-       }
-       /* Style for inline SVG icons */
-       .icon-inline {
-           display: inline-block;
-           vertical-align: middle;
-           width: 1.25em; /* Adjust size as needed */
-           height: 1.25em;
-           margin-right: 0.25em; /* Space between icon and text */
-       }
-       .icon-button {
-            width: 1.25rem; /* 20px */
-            height: 1.25rem;
-            display: inline-block;
-            vertical-align: middle;
-       }
-       .icon-large {
-            width: 1.875rem; /* 30px */
-            height: 1.875rem;
-            display: inline-block;
-            vertical-align: middle;
-       }
-       .icon-xl {
-            width: 2.25rem; /* 36px */
-            height: 2.25rem;
-            display: inline-block;
-            vertical-align: middle;
-       }
-       .icon-menu {
-           width: 1.875rem; /* 30px */
-           height: 1.875rem;
-       }
-        .icon-footer {
-            width: 1.5rem; /* 24px */
-            height: 1.5rem;
-            display: inline-block;
-            vertical-align: middle;
-            /* Applying color using filter to simulate text-gray-400 */
-            filter: invert(79%) sepia(11%) saturate(169%) hue-rotate(176deg) brightness(89%) contrast(86%);
-        }
-        .icon-footer:hover {
-             /* Applying color using filter to simulate hover:text-white */
-            filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(110deg) brightness(104%) contrast(104%);
-        }
-        .icon-color-inherit {
-            /* Use this class for icons that should inherit text color (like inside buttons) */
-             filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(110deg) brightness(104%) contrast(104%); /* White */
-        }
-        
+      }
+
+      /* Icon sizing */
+      .icon-inline {
+          display: inline-block;
+          vertical-align: middle;
+          width: 1.25em;
+          height: 1.25em;
+          margin-right: 0.25em;
+      }
+      .icon-button {
+          width: 1.25rem;
+          height: 1.25rem;
+          display: inline-block;
+          vertical-align: middle;
+      }
+      .icon-large {
+          width: 1.875rem;
+          height: 1.875rem;
+          display: inline-block;
+          vertical-align: middle;
+      }
+      .icon-xl {
+          width: 2.25rem;
+          height: 2.25rem;
+          display: inline-block;
+          vertical-align: middle;
+      }
+      .icon-menu {
+          width: 1.875rem;
+          height: 1.875rem;
+      }
+      .icon-footer {
+          width: 1.5rem;
+          height: 1.5rem;
+          display: inline-block;
+          vertical-align: middle;
+          filter: invert(79%) sepia(11%) saturate(169%) hue-rotate(176deg) brightness(89%) contrast(86%);
+      }
+      .icon-footer:hover {
+          filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(110deg) brightness(104%) contrast(104%);
+      }
+      .icon-color-inherit {
+          filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(110deg) brightness(104%) contrast(104%);
+      }
+
     </style>
 </head>
 <body class="antialiased">
@@ -180,13 +290,14 @@
 
     <main>
         <section id="home" class="hero-gradient py-24 md:py-40 relative overflow-hidden">
-            <div class="absolute top-0 left-0 w-64 h-64 bg-blue-200 rounded-full opacity-30 -translate-x-16 -translate-y-16 filter blur-3xl"></div>
-            <div class="absolute bottom-0 right-0 w-72 h-72 bg-indigo-200 rounded-full opacity-30 translate-x-16 translate-y-16 filter blur-3xl"></div>
+            <div class="blob-1 absolute top-0 left-0 w-80 h-80 bg-blue-500 rounded-full opacity-20 -translate-x-20 -translate-y-20 filter blur-3xl"></div>
+            <div class="blob-2 absolute bottom-0 right-0 w-96 h-96 bg-indigo-500 rounded-full opacity-20 translate-x-24 translate-y-24 filter blur-3xl"></div>
+            <div class="absolute top-1/2 left-1/4 w-56 h-56 bg-sky-400 rounded-full opacity-10 filter blur-3xl"></div>
             <div class="container mx-auto px-6 text-center relative z-10">
-                <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-gray-800 mb-5 leading-tight tracking-tight">
-                    <span data-lang-key="heroTitlePre">Stop Juggling Amazon Tasks, Start</span> <span class="text-blue-600" data-lang-key="heroTitleHighlight">Scaling Your Brand</span>
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white mb-5 leading-tight tracking-tight">
+                    <span data-lang-key="heroTitlePre">Your Amazon Business Deserves an Expert,</span> <span class="text-blue-300" data-lang-key="heroTitleHighlight">Not Just an Assistant</span>
                 </h1>
-                <p data-lang-key="heroSubtitle" class="text-lg md:text-xl text-gray-700 mb-10 max-w-3xl mx-auto">
+                <p data-lang-key="heroSubtitle" class="text-lg md:text-xl text-blue-100 mb-10 max-w-3xl mx-auto">
                     As your dedicated Amazon Virtual Assistant with 4+ years of experience, I handle the complexities of Vendor and Seller Central so you can focus on growth.
                 </p>
                 <a href="#contact" data-lang-key="heroButton" class="inline-block btn-gradient text-white font-semibold py-4 px-10 rounded-lg shadow-lg hover:shadow-xl transition duration-300 text-lg">
@@ -197,26 +308,27 @@
 
         <section id="services" class="py-20 md:py-28 bg-white">
              <div class="container mx-auto px-6">
-                <h2 data-lang-key="servicesTitle" class="text-3xl md:text-4xl font-bold text-center text-gray-800 mb-6">Your Strategic Amazon Partner</h2>
+                <h2 data-lang-key="servicesTitle" class="text-3xl md:text-4xl font-bold text-center text-gray-800 mb-2">Your Strategic Amazon Partner</h2>
+                <div class="heading-accent"></div>
                 <p data-lang-key="servicesSubtitle" class="text-center text-lg text-gray-600 mb-16 max-w-2xl mx-auto">From daily operations to strategic growth, I provide comprehensive support tailored to your brand's needs.</p>
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
-                    <div class="service-card bg-gray-50 p-8 rounded-xl shadow-sm text-center border border-gray-200">
+                    <div class="fade-up fade-up-delay-1 service-card card-accent-blue bg-gray-50 p-8 rounded-xl shadow-sm text-center border border-gray-200">
                         <div class="mb-5 inline-block p-4 bg-blue-100 rounded-full">
-                           <img src="https://cdn.jsdelivr.net/npm/lucide-static@latest/icons/briefcase.svg" alt="Icône Mallette" class="icon-xl text-blue-600">
+                           <img src="https://cdn.jsdelivr.net/npm/lucide-static@latest/icons/briefcase.svg" alt="Icône Mallette" class="icon-xl benefit-icon">
                         </div>
                         <h3 data-lang-key="service1Title" class="text-xl font-semibold text-gray-800 mb-3">End-to-End Account Management</h3>
                         <p data-lang-key="service1Desc" class="text-gray-600">Seamless handling of catalog management, inventory, invoicing, dispute resolution, and more. Consider it done.</p>
                     </div>
-                    <div class="service-card bg-gray-50 p-8 rounded-xl shadow-sm text-center border border-gray-200">
-                         <div class="mb-5 inline-block p-4 bg-blue-100 rounded-full">
-                            <img src="https://cdn.jsdelivr.net/npm/lucide-static@latest/icons/image.svg" alt="Icône Image" class="icon-xl text-blue-600">
+                    <div class="fade-up fade-up-delay-2 service-card card-accent-indigo bg-gray-50 p-8 rounded-xl shadow-sm text-center border border-gray-200">
+                         <div class="mb-5 inline-block p-4 bg-indigo-100 rounded-full">
+                            <img src="https://cdn.jsdelivr.net/npm/lucide-static@latest/icons/image.svg" alt="Icône Image" class="icon-xl" style="filter:invert(35%) sepia(80%) saturate(800%) hue-rotate(225deg) brightness(95%) contrast(95%)">
                         </div>
                         <h3 data-lang-key="service2Title" class="text-xl font-semibold text-gray-800 mb-3">Listing Visual Optimization</h3>
                         <p data-lang-key="service2Desc" class="text-gray-600">Creating compelling product images, lifestyle shots, and A+/EBC content that capture attention and drive conversions.</p>
                     </div>
-                    <div class="service-card bg-gray-50 p-8 rounded-xl shadow-sm text-center border border-gray-200">
-                         <div class="mb-5 inline-block p-4 bg-blue-100 rounded-full">
-                            <img src="https://cdn.jsdelivr.net/npm/lucide-static@latest/icons/shield-check.svg" alt="Icône Bouclier Vérifié" class="icon-xl text-blue-600">
+                    <div class="fade-up fade-up-delay-3 service-card card-accent-violet bg-gray-50 p-8 rounded-xl shadow-sm text-center border border-gray-200">
+                         <div class="mb-5 inline-block p-4 bg-violet-100 rounded-full">
+                            <img src="https://cdn.jsdelivr.net/npm/lucide-static@latest/icons/shield-check.svg" alt="Icône Bouclier Vérifié" class="icon-xl" style="filter:invert(30%) sepia(60%) saturate(900%) hue-rotate(255deg) brightness(90%) contrast(95%)">
                         </div>
                         <h3 data-lang-key="service3Title" class="text-xl font-semibold text-gray-800 mb-3">Proactive Support & Troubleshooting</h3>
                         <p data-lang-key="service3Desc" class="text-gray-600">Swift resolution of technical glitches and effective communication with Amazon support to ensure smooth operations.</p>
@@ -238,14 +350,15 @@
                             loading="lazy"
                         >
                         </div>
-                    <div class="text-center md:text-left">
-                        <h2 data-lang-key="aboutTitle" class="text-3xl md:text-4xl font-bold text-gray-800 mb-6">From Agent to Amazon Expert</h2>
+                    <div class="fade-up text-center md:text-left">
+                        <h2 data-lang-key="aboutTitle" class="text-3xl md:text-4xl font-bold text-gray-800 mb-2">From Agent to Amazon Expert</h2>
+                        <div class="heading-accent md:heading-accent-left"></div>
                         <p data-lang-key="aboutDesc" class="text-lg text-gray-700 mb-6 leading-relaxed">
                             I began my career with a leading digital solutions company, where I immersed myself in the world of Amazon. Over the years, I transitioned from a customer service agent to a Senior Marketplace Trainer, leading teams and managing accounts for a top French marketplace agency. This hands-on experience across Vendor and Seller Central equips me to tackle any challenge.
                         </p>
-                        <blockquote class="relative p-4 text-lg italic border-l-4 border-blue-400 bg-blue-100 text-blue-800 quote my-8 rounded-r-lg md:ml-0 md:mr-auto max-w-md">
-                            <p data-lang-key="aboutQuote" class="mb-2">"I'm passionate about transforming Amazon challenges into growth opportunities for your brand."</p>
-                            <cite class="block font-semibold not-italic text-base">- Thony M.</cite>
+                        <blockquote class="quote-enhanced text-lg italic text-blue-900 my-8 md:ml-0 md:mr-auto max-w-md">
+                            <p data-lang-key="aboutQuote" class="mb-2 relative z-10">"I'm passionate about transforming Amazon challenges into growth opportunities for your brand."</p>
+                            <cite class="block font-semibold not-italic text-base text-blue-700 relative z-10">— Thony M.</cite>
                         </blockquote>
                     </div>
                  </div>
@@ -254,32 +367,33 @@
 
         <section id="highlights" class="py-20 md:py-28 bg-white">
             <div class="container mx-auto px-6">
-                <h2 data-lang-key="whyHireTitle" class="text-3xl md:text-4xl font-bold text-center text-gray-800 mb-6">Why Partner with a Specialized Amazon VA?</h2>
-                 <p data-lang-key="whyHireSubtitle" class="text-center text-lg text-gray-600 mb-16 max-w-3xl mx-auto">Free up your time and leverage expert knowledge to navigate Amazon's complexities and accelerate your brand's growth.</p>
+                <h2 data-lang-key="whyHireTitle" class="text-3xl md:text-4xl font-bold text-center text-gray-800 mb-2">Why Partner with a Specialized Amazon VA?</h2>
+                <div class="heading-accent"></div>
+                <p data-lang-key="whyHireSubtitle" class="text-center text-lg text-gray-600 mb-16 max-w-3xl mx-auto">Free up your time and leverage expert knowledge to navigate Amazon's complexities and accelerate your brand's growth.</p>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-                    <div class="benefit-item flex items-start space-x-5 bg-gray-50 p-6 rounded-lg">
-                        <img src="https://cdn.jsdelivr.net/npm/lucide-static@latest/icons/clock.svg" alt="Icône Horloge" class="icon-large text-blue-600 flex-shrink-0 bg-blue-100 p-3 rounded-full mt-1">
+                    <div class="fade-up fade-up-delay-1 benefit-item flex items-start space-x-5 bg-gray-50 p-6 rounded-lg">
+                        <img src="https://cdn.jsdelivr.net/npm/lucide-static@latest/icons/clock.svg" alt="Icône Horloge" class="icon-large benefit-icon flex-shrink-0 bg-blue-100 p-3 rounded-full mt-1">
                         <div>
                             <h4 data-lang-key="benefit1Title" class="font-semibold text-lg text-gray-800 mb-1">Save Valuable Time</h4>
                             <p data-lang-key="benefit1Desc" class="text-gray-600">Delegate time-consuming tasks and focus on strategic decisions for your business growth.</p>
                         </div>
                     </div>
-                    <div class="benefit-item flex items-start space-x-5 bg-gray-50 p-6 rounded-lg">
-                         <img src="https://cdn.jsdelivr.net/npm/lucide-static@latest/icons/zap.svg" alt="Icône Éclair" class="icon-large text-blue-600 flex-shrink-0 bg-blue-100 p-3 rounded-full mt-1">
+                    <div class="fade-up fade-up-delay-2 benefit-item flex items-start space-x-5 bg-gray-50 p-6 rounded-lg">
+                        <img src="https://cdn.jsdelivr.net/npm/lucide-static@latest/icons/zap.svg" alt="Icône Éclair" class="icon-large benefit-icon flex-shrink-0 bg-blue-100 p-3 rounded-full mt-1">
                         <div>
                             <h4 data-lang-key="benefit2Title" class="font-semibold text-lg text-gray-800 mb-1">Leverage Specialized Expertise</h4>
                             <p data-lang-key="benefit2Desc" class="text-gray-600">Benefit from in-depth knowledge of Seller/Vendor Central, best practices, and effective troubleshooting.</p>
                         </div>
                     </div>
-                    <div class="benefit-item flex items-start space-x-5 bg-gray-50 p-6 rounded-lg">
-                         <img src="https://cdn.jsdelivr.net/npm/lucide-static@latest/icons/dollar-sign.svg" alt="Icône Dollar" class="icon-large text-blue-600 flex-shrink-0 bg-blue-100 p-3 rounded-full mt-1">
+                    <div class="fade-up fade-up-delay-3 benefit-item flex items-start space-x-5 bg-gray-50 p-6 rounded-lg">
+                        <img src="https://cdn.jsdelivr.net/npm/lucide-static@latest/icons/dollar-sign.svg" alt="Icône Dollar" class="icon-large benefit-icon flex-shrink-0 bg-blue-100 p-3 rounded-full mt-1">
                         <div>
                             <h4 data-lang-key="benefit3Title" class="font-semibold text-lg text-gray-800 mb-1">Cost-Effective Solution</h4>
                             <p data-lang-key="benefit3Desc" class="text-gray-600">Access expert support without the overhead costs associated with hiring a full-time employee.</p>
                         </div>
                     </div>
-                    <div class="benefit-item flex items-start space-x-5 bg-gray-50 p-6 rounded-lg">
-                         <img src="https://cdn.jsdelivr.net/npm/lucide-static@latest/icons/bar-chart-3.svg" alt="Icône Graphique" class="icon-large text-blue-600 flex-shrink-0 bg-blue-100 p-3 rounded-full mt-1">
+                    <div class="fade-up fade-up-delay-4 benefit-item flex items-start space-x-5 bg-gray-50 p-6 rounded-lg">
+                        <img src="https://cdn.jsdelivr.net/npm/lucide-static@latest/icons/bar-chart-3.svg" alt="Icône Graphique" class="icon-large benefit-icon flex-shrink-0 bg-blue-100 p-3 rounded-full mt-1">
                         <div>
                             <h4 data-lang-key="benefit4Title" class="font-semibold text-lg text-gray-800 mb-1">Flexible & Scalable Support</h4>
                             <p data-lang-key="benefit4Desc" class="text-gray-600">Adjust the level of assistance based on your evolving business needs and seasonal demands.</p>
@@ -292,10 +406,22 @@
         <section id="contact" class="py-20 md:py-28 bg-gradient-to-br from-gray-800 to-gray-900 text-white">
             <div class="container mx-auto px-6">
                 <div class="max-w-3xl mx-auto text-center">
-                    <h2 data-lang-key="contactTitle" class="text-3xl md:text-4xl font-bold mb-6">Ready to Elevate Your Amazon Game?</h2>
-                    <p data-lang-key="contactSubtitle" class="text-lg text-gray-300 mb-10">
+                    <h2 data-lang-key="contactTitle" class="text-3xl md:text-4xl font-bold mb-2">Ready to Elevate Your Amazon Game?</h2>
+                    <div class="heading-accent"></div>
+                    <p data-lang-key="contactSubtitle" class="text-lg text-gray-300 mb-8">
                         Let's discuss your specific needs and how my expertise can drive growth and efficiency for your brand. Fill out the form below or email me directly.
                     </p>
+                    <div class="flex flex-wrap justify-center gap-3 mb-10">
+                        <span class="stat-badge">
+                            <img src="https://cdn.jsdelivr.net/npm/lucide-static@latest/icons/clock.svg" class="w-4 h-4" alt=""> &lt; 24h response
+                        </span>
+                        <span class="stat-badge">
+                            <img src="https://cdn.jsdelivr.net/npm/lucide-static@latest/icons/award.svg" class="w-4 h-4" alt=""> 4+ years experience
+                        </span>
+                        <span class="stat-badge">
+                            <img src="https://cdn.jsdelivr.net/npm/lucide-static@latest/icons/globe.svg" class="w-4 h-4" alt=""> EN / FR
+                        </span>
+                    </div>
                 </div>
                 <div class="max-w-xl mx-auto bg-white p-8 md:p-10 rounded-lg shadow-xl">
                     <form id="contact-form"
@@ -348,7 +474,7 @@
         </section>
     </main>
 
-    <footer class="bg-gray-900 text-gray-400 py-10">
+    <footer class="bg-gray-900 text-gray-400 py-10 border-t-4 border-blue-600">
         <div class="container mx-auto px-6 text-center">
             <p class="font-semibold text-lg mb-2 text-white">Thony M.</p>
             <p data-lang-key="footerSubtitle" class="text-sm mb-4">Expert Amazon Virtual Assistant</p>
@@ -529,6 +655,35 @@
 
         // --- Set Formspree redirect back to current page ---
         document.getElementById('form-next').value = window.location.href;
+
+        // --- Scroll fade-up animations ---
+        const fadeEls = document.querySelectorAll('.fade-up');
+        const fadeObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    fadeObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.12 });
+        fadeEls.forEach(el => fadeObserver.observe(el));
+
+        // --- Nav active link on scroll ---
+        const sections = document.querySelectorAll('main section[id]');
+        const navLinks = document.querySelectorAll('header nav a[href^="#"]');
+        const sectionObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    navLinks.forEach(link => {
+                        link.classList.remove('nav-active');
+                        if (link.getAttribute('href') === '#' + entry.target.id) {
+                            link.classList.add('nav-active');
+                        }
+                    });
+                }
+            });
+        }, { threshold: 0.4 });
+        sections.forEach(s => sectionObserver.observe(s));
 
     </script>
 
