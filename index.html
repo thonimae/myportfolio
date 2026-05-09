@@ -2,502 +2,634 @@
 <html lang="en">
 <head>
     <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-D6T7WDCG6L"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-D6T7WDCG6L');
-</script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-D6T7WDCG6L"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-D6T7WDCG6L');
+    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Thony M. - Expert Amazon Virtual Assistant</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Work+Sans:wght@400;600&family=Space+Mono&display=swap" rel="stylesheet">
     <style>
-      /* Basic smooth scroll */
-      html {
-        scroll-behavior: smooth;
+      /* === RAWBLOCK DESIGN SYSTEM === */
+      html { scroll-behavior: smooth; }
+
+      *, *::before, *::after {
+        border-radius: 0 !important;
+        box-shadow: none !important;
       }
+
       body {
-        font-family: 'Inter', sans-serif;
-        background-color: #f8fafc;
-        color: #1f2937;
+        font-family: 'Work Sans', sans-serif;
+        font-size: 16px;
+        line-height: 1.6;
+        background: #FFFFFF;
+        color: #000000;
+        margin: 0;
+        -webkit-font-smoothing: antialiased;
       }
 
-      /* Hero gradient — deep navy */
-      .hero-gradient {
-        background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 55%, #1e40af 100%);
+      /* Typography */
+      h1 {
+        font-family: 'Archivo Black', sans-serif;
+        font-size: clamp(36px, 6vw, 64px);
+        line-height: 1.0;
+        font-weight: 400;
+        margin: 0;
+      }
+      h2 {
+        font-family: 'Archivo Black', sans-serif;
+        font-size: clamp(26px, 4vw, 48px);
+        line-height: 1.05;
+        font-weight: 400;
+        margin: 0 0 24px 0;
+      }
+      h3 {
+        font-family: 'Archivo Black', sans-serif;
+        font-size: clamp(20px, 2.5vw, 32px);
+        line-height: 1.1;
+        font-weight: 400;
+        margin: 0 0 12px 0;
+      }
+      h4 {
+        font-family: 'Work Sans', sans-serif;
+        font-size: 22px;
+        line-height: 1.2;
+        font-weight: 600;
+        margin: 0 0 8px 0;
+      }
+      p { margin: 0 0 16px 0; }
+      p:last-child { margin-bottom: 0; }
+
+      /* Links */
+      a { color: #0000FF; text-decoration: underline; }
+      a:hover { text-decoration: underline; }
+
+      /* Buttons */
+      .btn-primary {
+        background: #000000;
+        color: #FFFFFF !important;
+        border: 3px solid #000000;
+        font-family: 'Work Sans', sans-serif;
+        font-size: 14px;
+        font-weight: 600;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        padding: 10px 24px;
+        cursor: pointer;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        text-decoration: none !important;
+        transition: background 0.15s, color 0.15s, border-width 0.1s;
+        min-height: 44px;
+        line-height: 1.5;
+        box-sizing: border-box;
+      }
+      .btn-primary:hover {
+        background: #FFFFFF;
+        color: #000000 !important;
+        text-decoration: none !important;
+      }
+      .btn-primary:hover .btn-icon { filter: invert(0%); }
+      .btn-primary:active { border-width: 5px; }
+
+      .btn-inverted {
+        background: transparent;
+        color: #FFFFFF !important;
+        border: 3px solid #FFFFFF;
+        font-family: 'Work Sans', sans-serif;
+        font-size: 14px;
+        font-weight: 600;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        padding: 10px 24px;
+        cursor: pointer;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        text-decoration: none !important;
+        transition: background 0.15s, color 0.15s;
+        min-height: 44px;
+        line-height: 1.5;
+      }
+      .btn-inverted:hover {
+        background: #FFFFFF;
+        color: #000000 !important;
+        text-decoration: none !important;
       }
 
-      /* Animated hero blobs */
-      @keyframes blob-float {
-        0%, 100% { transform: translate(0, 0) scale(1); }
-        50% { transform: translate(0, -20px) scale(1.06); }
+      .btn-lg {
+        font-size: 18px;
+        padding: 16px 40px;
+        min-height: 56px;
       }
-      .blob-1 { animation: blob-float 9s ease-in-out infinite; }
-      .blob-2 { animation: blob-float 11s ease-in-out infinite reverse; }
+      .btn-full { width: 100%; }
 
-      /* Custom gradient for buttons */
-      .btn-gradient {
-        background: linear-gradient(to right, #2563eb, #3b82f6);
-        transition: all 0.3s ease;
-        box-shadow: 0 4px 6px -1px rgba(59, 130, 246, 0.3), 0 2px 4px -1px rgba(59, 130, 246, 0.2);
-      }
-      .btn-gradient:hover {
-        background: linear-gradient(to right, #1d4ed8, #2563eb);
-        transform: translateY(-2px);
-        box-shadow: 0 10px 15px -3px rgba(59, 130, 246, 0.4), 0 4px 6px -2px rgba(59, 130, 246, 0.3);
-      }
+      /* Icon inside button */
+      .btn-icon { filter: invert(100%); transition: filter 0.15s; }
 
-      /* Section heading accent underline */
-      .heading-accent {
-        width: 3.5rem;
-        height: 0.25rem;
-        background: linear-gradient(to right, #2563eb, #6366f1);
-        border-radius: 9999px;
-        margin: 0.6rem auto 1.5rem;
-      }
-      .heading-accent-left {
-        width: 3.5rem;
-        height: 0.25rem;
-        background: linear-gradient(to right, #2563eb, #6366f1);
-        border-radius: 9999px;
-        margin: 0.6rem 0 1.5rem;
+      /* Navigation */
+      header {
+        background: #FFFFFF;
+        border-bottom: 5px solid #000000;
+        position: sticky;
+        top: 0;
+        z-index: 50;
       }
 
-      /* Service card hover effect */
-      .service-card {
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      .nav-logo {
+        font-family: 'Archivo Black', sans-serif;
+        font-size: 22px;
+        font-weight: 400;
+        color: #000000 !important;
+        text-decoration: none !important;
       }
-      .service-card:hover {
-        transform: translateY(-6px);
-        box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.06);
+      .nav-logo:hover { text-decoration: none !important; }
+
+      .nav-link {
+        font-family: 'Work Sans', sans-serif;
+        font-size: 12px;
+        font-weight: 600;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        color: #000000 !important;
+        text-decoration: none !important;
+        padding-bottom: 3px;
+        border-bottom: 3px solid transparent;
+        transition: border-color 0.15s;
+      }
+      .nav-link:hover { border-bottom-color: #000000; }
+      .nav-active-rb { border-bottom-color: #000000 !important; }
+
+      /* Filter chips (lang switch) */
+      .chip {
+        background: #FFFFFF;
+        color: #000000;
+        border: 2px solid #000000;
+        font-family: 'Work Sans', sans-serif;
+        font-size: 10px;
+        font-weight: 600;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        padding: 4px 12px;
+        cursor: pointer;
+        display: inline-flex;
+        align-items: center;
+        height: 28px;
+        transition: background 0.15s, color 0.15s;
+      }
+      .chip:hover, .chip.active {
+        background: #000000;
+        color: #FFFFFF;
       }
 
-      /* Service card colored top borders */
-      .card-accent-blue  { border-top: 4px solid #3b82f6; }
-      .card-accent-indigo { border-top: 4px solid #6366f1; }
-      .card-accent-violet { border-top: 4px solid #8b5cf6; }
-
-      /* Benefit item style */
-      .benefit-item {
-        transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
-        border: 1px solid #e5e7eb;
+      /* Mobile menu */
+      #mobile-menu {
+        background: #FFFFFF;
+        border-top: 3px solid #000000;
       }
-      .benefit-item:hover {
-        background-color: #eff6ff;
-        transform: translateY(-3px);
-        box-shadow: 0 8px 16px -4px rgba(59, 130, 246, 0.12);
+      .mobile-nav-link {
+        font-family: 'Work Sans', sans-serif;
+        font-size: 12px;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        color: #000000 !important;
+        padding: 12px 24px;
+        display: block;
+        text-decoration: none !important;
+        border-bottom: 1px solid #000000;
+        transition: background 0.1s, color 0.1s;
       }
-
-      /* Fix benefit icon color — make blue */
-      .benefit-icon {
-        filter: invert(37%) sepia(98%) saturate(1234%) hue-rotate(203deg) brightness(97%) contrast(96%);
-      }
-
-      /* Form input styling */
-      .form-input {
-        transition: border-color 0.3s ease, box-shadow 0.3s ease;
-      }
-      .form-input:focus {
-        border-color: #3b82f6;
-        box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
-        outline: none;
+      .mobile-nav-link:hover {
+        background: #000000;
+        color: #FFFFFF !important;
       }
 
-      /* Profile picture — colored ring */
+      /* Section bases */
+      .section-white { background: #FFFFFF; }
+      .section-sunken { background: #F0F0F0; }
+      .section-inverted { background: #000000; color: #FFFFFF; }
+
+      /* Cards */
+      .card {
+        background: #FFFFFF;
+        border: 3px solid #000000;
+        padding: 24px;
+      }
+      .card-elevated {
+        background: #FFFFFF;
+        border: 5px solid #000000;
+        padding: 24px;
+      }
+
+      /* Service cards */
+      .service-icon-area {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 56px;
+        height: 56px;
+        border: 3px solid #000000;
+        margin-bottom: 16px;
+      }
+
+      /* Profile picture — square, no rounding */
       .profile-picture {
         object-fit: cover;
-        border: 3px solid white;
-        box-shadow: 0 0 0 4px #3b82f6, 0 20px 40px -10px rgba(59, 130, 246, 0.35);
+        border: 3px solid #000000;
+        display: block;
+        width: 100%;
+        height: 100%;
       }
 
-      /* Enhanced blockquote */
-      .quote-enhanced {
-        position: relative;
-        padding: 1.25rem 1.5rem 1.25rem 2rem;
-        background: linear-gradient(135deg, #eff6ff, #eef2ff);
-        border-left: 4px solid #3b82f6;
-        border-radius: 0 0.75rem 0.75rem 0;
+      /* Quote block */
+      .quote-block {
+        border-left: 5px solid #000000;
+        padding: 16px 24px;
+        background: #FFFFFF;
+        margin: 24px 0 0;
       }
-      .quote-enhanced::before {
-        content: '\201C';
-        position: absolute;
-        top: -0.75rem;
-        left: 0.6rem;
-        font-size: 5rem;
-        color: #3b82f6;
-        opacity: 0.25;
-        line-height: 1;
-        font-family: Georgia, serif;
-        pointer-events: none;
+      .quote-block p { margin: 0 0 8px 0; font-size: 16px; font-style: italic; font-weight: 600; }
+      .quote-block cite {
+        font-family: 'Work Sans', sans-serif;
+        font-size: 14px;
+        font-weight: 600;
+        font-style: normal;
       }
 
-      /* Scroll fade-up animations */
+      /* Benefit items */
+      .benefit-item {
+        border: 3px solid #000000;
+        padding: 24px;
+        background: #FFFFFF;
+        transition: background 0.15s, color 0.15s;
+      }
+      .benefit-item:hover { background: #000000; color: #FFFFFF; }
+      .benefit-item:hover .benefit-icon { filter: invert(100%); }
+      .benefit-icon {
+        width: 32px;
+        height: 32px;
+        flex-shrink: 0;
+        transition: filter 0.15s;
+      }
+
+      /* Form */
+      .form-label {
+        font-family: 'Archivo Black', sans-serif;
+        font-size: 14px;
+        font-weight: 400;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        display: block;
+        margin-bottom: 4px;
+        color: #000000;
+      }
+      .form-input {
+        background: #F0F0F0;
+        border: 3px solid #000000;
+        font-family: 'Space Mono', monospace;
+        font-size: 15px;
+        line-height: 1.5;
+        padding: 10px 12px;
+        color: #000000;
+        width: 100%;
+        display: block;
+        box-sizing: border-box;
+        outline: none;
+        transition: background 0.1s, border-width 0.1s;
+      }
+      .form-input:hover { background: #E8E8E8; }
+      .form-input:focus { border-width: 5px; }
+
+      /* Contact stat badges */
+      .stat-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 4px 12px;
+        border: 2px solid #FFFFFF;
+        font-family: 'Work Sans', sans-serif;
+        font-size: 11px;
+        font-weight: 600;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        color: #FFFFFF;
+      }
+      .stat-badge img { filter: invert(100%); }
+
+      /* Footer */
+      footer {
+        background: #000000;
+        color: #FFFFFF;
+        padding: 40px 0;
+      }
+      .footer-link {
+        font-family: 'Work Sans', sans-serif;
+        font-size: 12px;
+        font-weight: 600;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        color: #FFFFFF !important;
+        text-decoration: none !important;
+      }
+      .footer-link:hover { text-decoration: underline !important; }
+      .footer-icon {
+        filter: invert(100%) sepia(0%) saturate(0%) brightness(200%);
+        width: 24px;
+        height: 24px;
+        display: inline-block;
+        transition: opacity 0.15s;
+      }
+      .footer-icon:hover { opacity: 0.7; }
+
+      /* Fade-up animations */
       .fade-up {
         opacity: 0;
         transform: translateY(28px);
         transition: opacity 0.65s ease, transform 0.65s ease;
       }
-      .fade-up.visible {
-        opacity: 1;
-        transform: translateY(0);
-      }
+      .fade-up.visible { opacity: 1; transform: translateY(0); }
       .fade-up-delay-1 { transition-delay: 0.1s; }
       .fade-up-delay-2 { transition-delay: 0.2s; }
       .fade-up-delay-3 { transition-delay: 0.3s; }
       .fade-up-delay-4 { transition-delay: 0.4s; }
 
-      /* Nav active link indicator */
-      .nav-active {
-        color: #2563eb !important;
-        position: relative;
-      }
-      .nav-active::after {
-        content: '';
-        position: absolute;
-        bottom: -4px;
-        left: 0;
-        width: 100%;
-        height: 2px;
-        background: linear-gradient(to right, #2563eb, #6366f1);
-        border-radius: 9999px;
-      }
-
-      /* Contact stats badges */
-      .stat-badge {
-        display: inline-flex;
-        align-items: center;
-        gap: 0.5rem;
-        padding: 0.45rem 1rem;
-        background: rgba(255, 255, 255, 0.1);
-        border: 1px solid rgba(255, 255, 255, 0.2);
-        border-radius: 9999px;
-        font-size: 0.875rem;
-        color: white;
-        backdrop-filter: blur(4px);
-      }
-      .stat-badge img {
-        filter: invert(100%) sepia(0%) saturate(0%) brightness(110%);
-      }
-
-      /* Language switcher styles */
-      .lang-switch button {
-          padding: 0.25rem 0.5rem;
-          border-radius: 0.375rem;
-          font-weight: 500;
-          transition: background-color 0.3s ease, color 0.3s ease;
-          border: 1px solid transparent;
-          cursor: pointer;
-      }
-      .lang-switch button.active {
-          background-color: #3b82f6;
-          color: white;
-      }
-      .lang-switch button:not(.active) {
-          background-color: #e5e7eb;
-          color: #4b5563;
-          border-color: #d1d5db;
-      }
-      .lang-switch button:not(.active):hover {
-          background-color: #d1d5db;
-      }
-
-      /* Icon sizing */
-      .icon-inline {
-          display: inline-block;
-          vertical-align: middle;
-          width: 1.25em;
-          height: 1.25em;
-          margin-right: 0.25em;
-      }
-      .icon-button {
-          width: 1.25rem;
-          height: 1.25rem;
-          display: inline-block;
-          vertical-align: middle;
-      }
-      .icon-large {
-          width: 1.875rem;
-          height: 1.875rem;
-          display: inline-block;
-          vertical-align: middle;
-      }
-      .icon-xl {
-          width: 2.25rem;
-          height: 2.25rem;
-          display: inline-block;
-          vertical-align: middle;
-      }
-      .icon-menu {
-          width: 1.875rem;
-          height: 1.875rem;
-      }
-      .icon-footer {
-          width: 1.5rem;
-          height: 1.5rem;
-          display: inline-block;
-          vertical-align: middle;
-          filter: invert(79%) sepia(11%) saturate(169%) hue-rotate(176deg) brightness(89%) contrast(86%);
-      }
-      .icon-footer:hover {
-          filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(110deg) brightness(104%) contrast(104%);
-      }
-      .icon-color-inherit {
-          filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(110deg) brightness(104%) contrast(104%);
-      }
-
+      /* Menu button icon */
+      .menu-icon { width: 28px; height: 28px; display: block; }
     </style>
 </head>
-<body class="antialiased">
+<body>
 
-    <header class="bg-white shadow-md sticky top-0 z-50">
+    <header>
         <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="#home" class="text-2xl font-extrabold text-blue-600 hover:text-blue-700 transition duration-300">Thony M.</a>
+            <a href="#home" class="nav-logo">Thony M.</a>
             <div class="hidden md:flex items-center space-x-8">
-                <a href="#home" data-lang-key="navHome" class="text-gray-600 hover:text-blue-600 font-medium transition duration-300">Home</a>
-                <a href="#services" data-lang-key="navServices" class="text-gray-600 hover:text-blue-600 font-medium transition duration-300">Services</a>
-                <a href="#about" data-lang-key="navAbout" class="text-gray-600 hover:text-blue-600 font-medium transition duration-300">About</a>
-                <a href="#highlights" data-lang-key="navBenefits" class="text-gray-600 hover:text-blue-600 font-medium transition duration-300">Benefits</a>
-                <a href="#contact" data-lang-key="navContact" class="text-gray-600 hover:text-blue-600 font-medium transition duration-300">Contact</a>
-                <div class="lang-switch flex space-x-2 border-l pl-6 border-gray-300">
-                    <button id="lang-en" aria-label="Switch to English">EN</button>
-                    <button id="lang-fr" aria-label="Switch to French">FR</button>
+                <a href="#home" data-lang-key="navHome" class="nav-link">Home</a>
+                <a href="#services" data-lang-key="navServices" class="nav-link">Services</a>
+                <a href="#about" data-lang-key="navAbout" class="nav-link">About</a>
+                <a href="#highlights" data-lang-key="navBenefits" class="nav-link">Benefits</a>
+                <a href="#contact" data-lang-key="navContact" class="nav-link">Contact</a>
+                <div class="flex space-x-2 pl-6" style="border-left: 2px solid #000000;">
+                    <button id="lang-en" class="chip" aria-label="Switch to English">EN</button>
+                    <button id="lang-fr" class="chip" aria-label="Switch to French">FR</button>
                 </div>
             </div>
-            <div class="md:hidden flex items-center space-x-4">
-                <div class="lang-switch flex space-x-1">
-                    <button id="lang-en-mobile" aria-label="Switch to English" class="text-sm">EN</button>
-                    <button id="lang-fr-mobile" aria-label="Switch to French" class="text-sm">FR</button>
+            <div class="md:hidden flex items-center space-x-3">
+                <div class="flex space-x-1">
+                    <button id="lang-en-mobile" class="chip" aria-label="Switch to English">EN</button>
+                    <button id="lang-fr-mobile" class="chip" aria-label="Switch to French">FR</button>
                 </div>
-                <button id="menu-btn" aria-label="Toggle Menu" class="text-gray-700 hover:text-blue-600 focus:outline-none transition duration-300">
-                    <img id="menu-open-icon" src="https://cdn.jsdelivr.net/npm/lucide-static@latest/icons/menu.svg" alt="Menu" class="icon-menu">
-                    <img id="menu-close-icon" src="https://cdn.jsdelivr.net/npm/lucide-static@latest/icons/x.svg" alt="Close Menu" class="icon-menu hidden">
+                <button id="menu-btn" aria-label="Toggle Menu">
+                    <img id="menu-open-icon" src="https://cdn.jsdelivr.net/npm/lucide-static@latest/icons/menu.svg" alt="Menu" class="menu-icon">
+                    <img id="menu-close-icon" src="https://cdn.jsdelivr.net/npm/lucide-static@latest/icons/x.svg" alt="Close Menu" class="menu-icon hidden">
                 </button>
             </div>
         </nav>
-        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-200 shadow-lg">
-            <a href="#home" data-lang-key="navHomeMobile" class="block px-6 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition duration-300 font-medium">Home</a>
-            <a href="#services" data-lang-key="navServicesMobile" class="block px-6 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition duration-300 font-medium">Services</a>
-            <a href="#about" data-lang-key="navAboutMobile" class="block px-6 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition duration-300 font-medium">About</a>
-            <a href="#highlights" data-lang-key="navBenefitsMobile" class="block px-6 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition duration-300 font-medium">Benefits</a>
-            <a href="#contact" data-lang-key="navContactMobile" class="block px-6 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition duration-300 font-medium">Contact</a>
+        <div id="mobile-menu" class="hidden md:hidden">
+            <a href="#home" data-lang-key="navHomeMobile" class="mobile-nav-link">Home</a>
+            <a href="#services" data-lang-key="navServicesMobile" class="mobile-nav-link">Services</a>
+            <a href="#about" data-lang-key="navAboutMobile" class="mobile-nav-link">About</a>
+            <a href="#highlights" data-lang-key="navBenefitsMobile" class="mobile-nav-link">Benefits</a>
+            <a href="#contact" data-lang-key="navContactMobile" class="mobile-nav-link">Contact</a>
         </div>
     </header>
 
     <main>
-        <section id="home" class="hero-gradient py-24 md:py-40 relative overflow-hidden">
-            <div class="blob-1 absolute top-0 left-0 w-80 h-80 bg-blue-500 rounded-full opacity-20 -translate-x-20 -translate-y-20 filter blur-3xl"></div>
-            <div class="blob-2 absolute bottom-0 right-0 w-96 h-96 bg-indigo-500 rounded-full opacity-20 translate-x-24 translate-y-24 filter blur-3xl"></div>
-            <div class="absolute top-1/2 left-1/4 w-56 h-56 bg-sky-400 rounded-full opacity-10 filter blur-3xl"></div>
-            <div class="container mx-auto px-6 text-center relative z-10">
-                <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white mb-5 leading-tight tracking-tight">
-                    <span data-lang-key="heroTitlePre">Your Amazon Business Deserves an Expert,</span> <span class="text-blue-300" data-lang-key="heroTitleHighlight">Not Just an Assistant</span>
+
+        <!-- Hero -->
+        <section id="home" class="section-inverted" style="padding: 80px 0 100px;">
+            <div class="container mx-auto px-6 text-center">
+                <h1 class="mb-6" style="color: #FFFFFF;">
+                    <span data-lang-key="heroTitlePre">Your Amazon Business Deserves an Expert,</span>
+                    <br>
+                    <span data-lang-key="heroTitleHighlight" style="text-decoration: underline; text-underline-offset: 6px;">Not Just an Assistant</span>
                 </h1>
-                <p data-lang-key="heroSubtitle" class="text-lg md:text-xl text-blue-100 mb-10 max-w-3xl mx-auto">
+                <p data-lang-key="heroSubtitle" class="mb-10 max-w-3xl mx-auto" style="font-size: 18px; color: #FFFFFF;">
                     As your dedicated Amazon Virtual Assistant with 4+ years of experience, I handle the complexities of Vendor and Seller Central so you can focus on growth.
                 </p>
-                <a href="#contact" data-lang-key="heroButton" class="inline-block btn-gradient text-white font-semibold py-4 px-10 rounded-lg shadow-lg hover:shadow-xl transition duration-300 text-lg">
+                <a href="#contact" data-lang-key="heroButton" class="btn-inverted btn-lg">
                     Unlock Your Amazon Potential
                 </a>
             </div>
         </section>
 
-        <section id="services" class="py-20 md:py-28 bg-white">
-             <div class="container mx-auto px-6">
-                <h2 data-lang-key="servicesTitle" class="text-3xl md:text-4xl font-bold text-center text-gray-800 mb-2">Your Strategic Amazon Partner</h2>
-                <div class="heading-accent"></div>
-                <p data-lang-key="servicesSubtitle" class="text-center text-lg text-gray-600 mb-16 max-w-2xl mx-auto">From daily operations to strategic growth, I provide comprehensive support tailored to your brand's needs.</p>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
-                    <div class="fade-up fade-up-delay-1 service-card card-accent-blue bg-gray-50 p-8 rounded-xl shadow-sm text-center border border-gray-200">
-                        <div class="mb-5 inline-block p-4 bg-blue-100 rounded-full">
-                           <img src="https://cdn.jsdelivr.net/npm/lucide-static@latest/icons/briefcase.svg" alt="Icône Mallette" class="icon-xl benefit-icon">
+        <!-- Services -->
+        <section id="services" class="section-white" style="padding: 80px 0;">
+            <div class="container mx-auto px-6">
+                <h2 data-lang-key="servicesTitle" class="text-center">Your Strategic Amazon Partner</h2>
+                <p data-lang-key="servicesSubtitle" class="text-center mb-16 max-w-2xl mx-auto">
+                    From daily operations to strategic growth, I provide comprehensive support tailored to your brand's needs.
+                </p>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="fade-up fade-up-delay-1 card text-center">
+                        <div class="service-icon-area mx-auto">
+                            <img src="https://cdn.jsdelivr.net/npm/lucide-static@latest/icons/briefcase.svg" alt="" style="width: 28px; height: 28px;">
                         </div>
-                        <h3 data-lang-key="service1Title" class="text-xl font-semibold text-gray-800 mb-3">End-to-End Account Management</h3>
-                        <p data-lang-key="service1Desc" class="text-gray-600">Seamless handling of catalog management, inventory, invoicing, dispute resolution, and more. Consider it done.</p>
+                        <h3 data-lang-key="service1Title">End-to-End Account Management</h3>
+                        <p data-lang-key="service1Desc">Seamless handling of catalog management, inventory, invoicing, dispute resolution, and more. Consider it done.</p>
                     </div>
-                    <div class="fade-up fade-up-delay-2 service-card card-accent-indigo bg-gray-50 p-8 rounded-xl shadow-sm text-center border border-gray-200">
-                         <div class="mb-5 inline-block p-4 bg-indigo-100 rounded-full">
-                            <img src="https://cdn.jsdelivr.net/npm/lucide-static@latest/icons/image.svg" alt="Icône Image" class="icon-xl" style="filter:invert(35%) sepia(80%) saturate(800%) hue-rotate(225deg) brightness(95%) contrast(95%)">
+                    <div class="fade-up fade-up-delay-2 card text-center">
+                        <div class="service-icon-area mx-auto">
+                            <img src="https://cdn.jsdelivr.net/npm/lucide-static@latest/icons/image.svg" alt="" style="width: 28px; height: 28px;">
                         </div>
-                        <h3 data-lang-key="service2Title" class="text-xl font-semibold text-gray-800 mb-3">Listing Visual Optimization</h3>
-                        <p data-lang-key="service2Desc" class="text-gray-600">Creating compelling product images, lifestyle shots, and A+/EBC content that capture attention and drive conversions.</p>
+                        <h3 data-lang-key="service2Title">Listing Visual Optimization</h3>
+                        <p data-lang-key="service2Desc">Creating compelling product images, lifestyle shots, and A+/EBC content that capture attention and drive conversions.</p>
                     </div>
-                    <div class="fade-up fade-up-delay-3 service-card card-accent-violet bg-gray-50 p-8 rounded-xl shadow-sm text-center border border-gray-200">
-                         <div class="mb-5 inline-block p-4 bg-violet-100 rounded-full">
-                            <img src="https://cdn.jsdelivr.net/npm/lucide-static@latest/icons/shield-check.svg" alt="Icône Bouclier Vérifié" class="icon-xl" style="filter:invert(30%) sepia(60%) saturate(900%) hue-rotate(255deg) brightness(90%) contrast(95%)">
+                    <div class="fade-up fade-up-delay-3 card text-center">
+                        <div class="service-icon-area mx-auto">
+                            <img src="https://cdn.jsdelivr.net/npm/lucide-static@latest/icons/shield-check.svg" alt="" style="width: 28px; height: 28px;">
                         </div>
-                        <h3 data-lang-key="service3Title" class="text-xl font-semibold text-gray-800 mb-3">Proactive Support & Troubleshooting</h3>
-                        <p data-lang-key="service3Desc" class="text-gray-600">Swift resolution of technical glitches and effective communication with Amazon support to ensure smooth operations.</p>
+                        <h3 data-lang-key="service3Title">Proactive Support & Troubleshooting</h3>
+                        <p data-lang-key="service3Desc">Swift resolution of technical glitches and effective communication with Amazon support to ensure smooth operations.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="about" class="py-20 md:py-28 bg-blue-50 overflow-hidden">
+        <!-- About -->
+        <section id="about" class="section-sunken" style="padding: 80px 0;">
             <div class="container mx-auto px-6">
-                 <div class="max-w-5xl mx-auto flex flex-col md:flex-row items-center gap-10 md:gap-16">
-                    <div class="flex-shrink-0 w-48 h-48 md:w-64 md:h-64 lg:w-72 lg:h-72">
+                <div class="max-w-5xl mx-auto flex flex-col md:flex-row items-start gap-12 md:gap-16">
+                    <div class="flex-shrink-0" style="width: 240px; height: 240px;">
                         <img
                             id="profile-img"
-                            src="profil-picture.jpg" alt="Profile picture of Thony M."
+                            src="profil-picture.jpg"
+                            alt="Profile picture of Thony M."
                             data-lang-alt="profileAlt"
-                            class="profile-picture w-full h-full rounded-full shadow-lg"
-                            onerror="this.onerror=null; this.src='https://placehold.co/300x300/cccccc/666666?text=Photo';"
+                            class="profile-picture"
+                            onerror="this.onerror=null; this.src='https://placehold.co/300x300/000000/FFFFFF?text=TM';"
                             loading="lazy"
                         >
-                        </div>
-                    <div class="fade-up text-center md:text-left">
-                        <h2 data-lang-key="aboutTitle" class="text-3xl md:text-4xl font-bold text-gray-800 mb-2">From Agent to Amazon Expert</h2>
-                        <div class="heading-accent md:heading-accent-left"></div>
-                        <p data-lang-key="aboutDesc" class="text-lg text-gray-700 mb-6 leading-relaxed">
+                    </div>
+                    <div class="fade-up flex-1">
+                        <h2 data-lang-key="aboutTitle">From Agent to Amazon Expert</h2>
+                        <p data-lang-key="aboutDesc">
                             I began my career with a leading digital solutions company, where I immersed myself in the world of Amazon. Over the years, I transitioned from a customer service agent to a Senior Marketplace Trainer, leading teams and managing accounts for a top French marketplace agency. This hands-on experience across Vendor and Seller Central equips me to tackle any challenge.
                         </p>
-                        <blockquote class="quote-enhanced text-lg italic text-blue-900 my-8 md:ml-0 md:mr-auto max-w-md">
-                            <p data-lang-key="aboutQuote" class="mb-2 relative z-10">"I'm passionate about transforming Amazon challenges into growth opportunities for your brand."</p>
-                            <cite class="block font-semibold not-italic text-base text-blue-700 relative z-10">— Thony M.</cite>
+                        <blockquote class="quote-block">
+                            <p data-lang-key="aboutQuote">"I'm passionate about transforming Amazon challenges into growth opportunities for your brand."</p>
+                            <cite>— Thony M.</cite>
                         </blockquote>
                     </div>
-                 </div>
+                </div>
             </div>
         </section>
 
-        <section id="highlights" class="py-20 md:py-28 bg-white">
+        <!-- Benefits -->
+        <section id="highlights" class="section-white" style="padding: 80px 0;">
             <div class="container mx-auto px-6">
-                <h2 data-lang-key="whyHireTitle" class="text-3xl md:text-4xl font-bold text-center text-gray-800 mb-2">Why Partner with a Specialized Amazon VA?</h2>
-                <div class="heading-accent"></div>
-                <p data-lang-key="whyHireSubtitle" class="text-center text-lg text-gray-600 mb-16 max-w-3xl mx-auto">Free up your time and leverage expert knowledge to navigate Amazon's complexities and accelerate your brand's growth.</p>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-                    <div class="fade-up fade-up-delay-1 benefit-item flex items-start space-x-5 bg-gray-50 p-6 rounded-lg">
-                        <img src="https://cdn.jsdelivr.net/npm/lucide-static@latest/icons/clock.svg" alt="Icône Horloge" class="icon-large benefit-icon flex-shrink-0 bg-blue-100 p-3 rounded-full mt-1">
+                <h2 data-lang-key="whyHireTitle" class="text-center">Why Partner with a Specialized Amazon VA?</h2>
+                <p data-lang-key="whyHireSubtitle" class="text-center mb-16 max-w-3xl mx-auto">
+                    Free up your time and leverage expert knowledge to navigate Amazon's complexities and accelerate your brand's growth.
+                </p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+                    <div class="fade-up fade-up-delay-1 benefit-item flex items-start gap-5">
+                        <img src="https://cdn.jsdelivr.net/npm/lucide-static@latest/icons/clock.svg" alt="" class="benefit-icon mt-1">
                         <div>
-                            <h4 data-lang-key="benefit1Title" class="font-semibold text-lg text-gray-800 mb-1">Save Valuable Time</h4>
-                            <p data-lang-key="benefit1Desc" class="text-gray-600">Delegate time-consuming tasks and focus on strategic decisions for your business growth.</p>
+                            <h4 data-lang-key="benefit1Title">Save Valuable Time</h4>
+                            <p data-lang-key="benefit1Desc">Delegate time-consuming tasks and focus on strategic decisions for your business growth.</p>
                         </div>
                     </div>
-                    <div class="fade-up fade-up-delay-2 benefit-item flex items-start space-x-5 bg-gray-50 p-6 rounded-lg">
-                        <img src="https://cdn.jsdelivr.net/npm/lucide-static@latest/icons/zap.svg" alt="Icône Éclair" class="icon-large benefit-icon flex-shrink-0 bg-blue-100 p-3 rounded-full mt-1">
+                    <div class="fade-up fade-up-delay-2 benefit-item flex items-start gap-5">
+                        <img src="https://cdn.jsdelivr.net/npm/lucide-static@latest/icons/zap.svg" alt="" class="benefit-icon mt-1">
                         <div>
-                            <h4 data-lang-key="benefit2Title" class="font-semibold text-lg text-gray-800 mb-1">Leverage Specialized Expertise</h4>
-                            <p data-lang-key="benefit2Desc" class="text-gray-600">Benefit from in-depth knowledge of Seller/Vendor Central, best practices, and effective troubleshooting.</p>
+                            <h4 data-lang-key="benefit2Title">Leverage Specialized Expertise</h4>
+                            <p data-lang-key="benefit2Desc">Benefit from in-depth knowledge of Seller/Vendor Central, best practices, and effective troubleshooting.</p>
                         </div>
                     </div>
-                    <div class="fade-up fade-up-delay-3 benefit-item flex items-start space-x-5 bg-gray-50 p-6 rounded-lg">
-                        <img src="https://cdn.jsdelivr.net/npm/lucide-static@latest/icons/dollar-sign.svg" alt="Icône Dollar" class="icon-large benefit-icon flex-shrink-0 bg-blue-100 p-3 rounded-full mt-1">
+                    <div class="fade-up fade-up-delay-3 benefit-item flex items-start gap-5">
+                        <img src="https://cdn.jsdelivr.net/npm/lucide-static@latest/icons/dollar-sign.svg" alt="" class="benefit-icon mt-1">
                         <div>
-                            <h4 data-lang-key="benefit3Title" class="font-semibold text-lg text-gray-800 mb-1">Cost-Effective Solution</h4>
-                            <p data-lang-key="benefit3Desc" class="text-gray-600">Access expert support without the overhead costs associated with hiring a full-time employee.</p>
+                            <h4 data-lang-key="benefit3Title">Cost-Effective Solution</h4>
+                            <p data-lang-key="benefit3Desc">Access expert support without the overhead costs associated with hiring a full-time employee.</p>
                         </div>
                     </div>
-                    <div class="fade-up fade-up-delay-4 benefit-item flex items-start space-x-5 bg-gray-50 p-6 rounded-lg">
-                        <img src="https://cdn.jsdelivr.net/npm/lucide-static@latest/icons/bar-chart-3.svg" alt="Icône Graphique" class="icon-large benefit-icon flex-shrink-0 bg-blue-100 p-3 rounded-full mt-1">
+                    <div class="fade-up fade-up-delay-4 benefit-item flex items-start gap-5">
+                        <img src="https://cdn.jsdelivr.net/npm/lucide-static@latest/icons/bar-chart-3.svg" alt="" class="benefit-icon mt-1">
                         <div>
-                            <h4 data-lang-key="benefit4Title" class="font-semibold text-lg text-gray-800 mb-1">Flexible & Scalable Support</h4>
-                            <p data-lang-key="benefit4Desc" class="text-gray-600">Adjust the level of assistance based on your evolving business needs and seasonal demands.</p>
+                            <h4 data-lang-key="benefit4Title">Flexible & Scalable Support</h4>
+                            <p data-lang-key="benefit4Desc">Adjust the level of assistance based on your evolving business needs and seasonal demands.</p>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="contact" class="py-20 md:py-28 bg-gradient-to-br from-gray-800 to-gray-900 text-white">
+        <!-- Contact -->
+        <section id="contact" class="section-inverted" style="padding: 80px 0;">
             <div class="container mx-auto px-6">
-                <div class="max-w-3xl mx-auto text-center">
-                    <h2 data-lang-key="contactTitle" class="text-3xl md:text-4xl font-bold mb-2">Ready to Elevate Your Amazon Game?</h2>
-                    <div class="heading-accent"></div>
-                    <p data-lang-key="contactSubtitle" class="text-lg text-gray-300 mb-8">
+                <div class="max-w-3xl mx-auto text-center mb-12">
+                    <h2 data-lang-key="contactTitle" style="color: #FFFFFF;">Ready to Elevate Your Amazon Game?</h2>
+                    <p data-lang-key="contactSubtitle" class="mb-8" style="color: #FFFFFF;">
                         Let's discuss your specific needs and how my expertise can drive growth and efficiency for your brand. Fill out the form below or email me directly.
                     </p>
-                    <div class="flex flex-wrap justify-center gap-3 mb-10">
+                    <div class="flex flex-wrap justify-center gap-3">
                         <span class="stat-badge">
-                            <img src="https://cdn.jsdelivr.net/npm/lucide-static@latest/icons/clock.svg" class="w-4 h-4" alt=""> &lt; 24h response
+                            <img src="https://cdn.jsdelivr.net/npm/lucide-static@latest/icons/clock.svg" style="width: 14px; height: 14px;" alt="">
+                            &lt; 24h response
                         </span>
                         <span class="stat-badge">
-                            <img src="https://cdn.jsdelivr.net/npm/lucide-static@latest/icons/award.svg" class="w-4 h-4" alt=""> 4+ years experience
+                            <img src="https://cdn.jsdelivr.net/npm/lucide-static@latest/icons/award.svg" style="width: 14px; height: 14px;" alt="">
+                            4+ years experience
                         </span>
                         <span class="stat-badge">
-                            <img src="https://cdn.jsdelivr.net/npm/lucide-static@latest/icons/globe.svg" class="w-4 h-4" alt=""> EN / FR
+                            <img src="https://cdn.jsdelivr.net/npm/lucide-static@latest/icons/globe.svg" style="width: 14px; height: 14px;" alt="">
+                            EN / FR
                         </span>
                     </div>
                 </div>
-                <div class="max-w-xl mx-auto bg-white p-8 md:p-10 rounded-lg shadow-xl">
+                <div class="max-w-xl mx-auto card">
                     <form id="contact-form"
                           action="https://formspree.io/f/xovekoaz"
                           method="POST"
-                          class="space-y-6">
+                          class="space-y-5">
                         <div>
-                            <label for="name" data-lang-key="formNameLabel" class="block text-sm font-medium text-gray-700 mb-1">Full Name</label>
+                            <label for="name" data-lang-key="formNameLabel" class="form-label">Full Name</label>
                             <input type="text" name="name" id="name" required
-                                   class="form-input block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm text-gray-900 placeholder-gray-400 focus:ring-blue-500 focus:border-blue-500"
+                                   class="form-input"
                                    data-lang-placeholder="formNamePlaceholder"
                                    placeholder="Your Name">
                         </div>
                         <div>
-                            <label for="email" data-lang-key="formEmailLabel" class="block text-sm font-medium text-gray-700 mb-1">Email Address</label>
+                            <label for="email" data-lang-key="formEmailLabel" class="form-label">Email Address</label>
                             <input type="email" name="email" id="email" required
-                                   class="form-input block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm text-gray-900 placeholder-gray-400 focus:ring-blue-500 focus:border-blue-500"
+                                   class="form-input"
                                    data-lang-placeholder="formEmailPlaceholder"
                                    placeholder="you@example.com">
                         </div>
-                         <div>
-                            <label for="subject" data-lang-key="formSubjectLabel" class="block text-sm font-medium text-gray-700 mb-1">Subject</label>
+                        <div>
+                            <label for="subject" data-lang-key="formSubjectLabel" class="form-label">Subject</label>
                             <input type="text" name="_subject" id="subject" required
-                                   class="form-input block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm text-gray-900 placeholder-gray-400 focus:ring-blue-500 focus:border-blue-500"
+                                   class="form-input"
                                    data-lang-placeholder="formSubjectPlaceholder"
                                    placeholder="How can I help?">
                         </div>
                         <div>
-                            <label for="message" data-lang-key="formMessageLabel" class="block text-sm font-medium text-gray-700 mb-1">Message</label>
+                            <label for="message" data-lang-key="formMessageLabel" class="form-label">Message</label>
                             <textarea id="message" name="message" rows="4" required
-                                      class="form-input block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm text-gray-900 placeholder-gray-400 focus:ring-blue-500 focus:border-blue-500"
+                                      class="form-input"
+                                      style="resize: vertical;"
                                       data-lang-placeholder="formMessagePlaceholder"
                                       placeholder="Tell me about your Amazon business and needs..."></textarea>
                         </div>
                         <input type="hidden" name="_next" id="form-next">
                         <input type="text" name="_gotcha" style="display:none">
                         <div>
-                            <button type="submit"
-                                    class="w-full flex justify-center items-center space-x-2 btn-gradient text-white font-semibold py-3 px-8 rounded-lg shadow-md hover:shadow-lg transition duration-300 text-lg focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
-                                 <img src="https://cdn.jsdelivr.net/npm/lucide-static@latest/icons/send.svg" alt="Icône Envoyer" class="icon-button icon-color-inherit">
+                            <button type="submit" class="btn-primary btn-full">
+                                <img src="https://cdn.jsdelivr.net/npm/lucide-static@latest/icons/send.svg" alt="" style="width: 16px; height: 16px;" class="btn-icon">
                                 <span data-lang-key="formSubmitButton">Send Message</span>
                             </button>
                         </div>
                     </form>
-                     <p class="mt-8 text-center text-gray-600">
-                        <span data-lang-key="contactOrEmail">Or email me directly at:</span> <a href="mailto:thonymaherison@gmail.com" class="font-medium text-blue-600 hover:text-blue-700 hover:underline">thonymaherison@gmail.com</a>
+                    <p class="mt-6 text-center" style="font-size: 14px; color: #000000;">
+                        <span data-lang-key="contactOrEmail">Or email me directly at:</span>
+                        <a href="mailto:thonymaherison@gmail.com">thonymaherison@gmail.com</a>
                     </p>
                 </div>
             </div>
         </section>
+
     </main>
 
-    <footer class="bg-gray-900 text-gray-400 py-10 border-t-4 border-blue-600">
+    <footer>
         <div class="container mx-auto px-6 text-center">
-            <p class="font-semibold text-lg mb-2 text-white">Thony M.</p>
-            <p data-lang-key="footerSubtitle" class="text-sm mb-4">Expert Amazon Virtual Assistant</p>
-            <div class="flex justify-center space-x-6 mb-6">
-                 <a href="#home" data-lang-key="footerNavHome" class="hover:text-white transition duration-300">Home</a>
-                 <a href="#services" data-lang-key="footerNavServices" class="hover:text-white transition duration-300">Services</a>
-                 <a href="#about" data-lang-key="footerNavAbout" class="hover:text-white transition duration-300">About</a>
-                 <a href="#highlights" data-lang-key="footerNavBenefits" class="hover:text-white transition duration-300">Benefits</a>
-                 <a href="#contact" data-lang-key="footerNavContact" class="hover:text-white transition duration-300">Contact</a>
+            <p class="mb-1" style="font-family: 'Archivo Black', sans-serif; font-size: 22px; color: #FFFFFF;">Thony M.</p>
+            <p data-lang-key="footerSubtitle" class="mb-8" style="font-family: 'Work Sans', sans-serif; font-size: 12px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; color: #FFFFFF;">Expert Amazon Virtual Assistant</p>
+            <div class="flex justify-center gap-6 mb-8 flex-wrap">
+                <a href="#home" data-lang-key="footerNavHome" class="footer-link">Home</a>
+                <a href="#services" data-lang-key="footerNavServices" class="footer-link">Services</a>
+                <a href="#about" data-lang-key="footerNavAbout" class="footer-link">About</a>
+                <a href="#highlights" data-lang-key="footerNavBenefits" class="footer-link">Benefits</a>
+                <a href="#contact" data-lang-key="footerNavContact" class="footer-link">Contact</a>
             </div>
-            <div class="mb-6">
-                <a href="https://www.linkedin.com/in/thonymaherison" target="_blank" rel="noopener noreferrer" class="inline-block hover:opacity-80 transition duration-300" aria-label="Profil LinkedIn">
-                     <img src="https://cdn.jsdelivr.net/npm/lucide-static@latest/icons/linkedin.svg" alt="LinkedIn" class="icon-footer">
+            <div class="mb-8">
+                <a href="https://www.linkedin.com/in/thonymaherison" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile">
+                    <img src="https://cdn.jsdelivr.net/npm/lucide-static@latest/icons/linkedin.svg" alt="LinkedIn" class="footer-icon mx-auto">
                 </a>
             </div>
-            <p data-lang-key="footerCopyright" class="text-sm">&copy; <script>document.write(new Date().getFullYear())</script> Thony M. All rights reserved.</p>
+            <p style="font-size: 12px; color: #FFFFFF;">
+                &copy; <span id="copyright-year"></span> Thony M. <span data-lang-key="footerCopyright">All rights reserved.</span>
+            </p>
         </div>
     </footer>
 
     <script>
+        // Set copyright year
+        document.getElementById('copyright-year').textContent = new Date().getFullYear();
+
         // --- Translations Object ---
         const translations = {
-             en: {
+            en: {
                 pageTitle: "Thony M. - Expert Amazon Virtual Assistant",
                 navHome: "Home", navServices: "Services", navAbout: "About", navBenefits: "Benefits", navContact: "Contact",
                 navHomeMobile: "Home", navServicesMobile: "Services", navAboutMobile: "About", navBenefitsMobile: "Benefits", navContactMobile: "Contact",
@@ -593,44 +725,37 @@
         const allAltElements = document.querySelectorAll('[data-lang-alt]');
 
         function setLanguage(lang) {
-            if (!translations[lang]) {
-                console.error(`Language ${lang} not found in translations.`);
-                return;
-            }
+            if (!translations[lang]) return;
             document.documentElement.lang = lang;
             document.title = translations[lang].pageTitle;
             allLangElements.forEach(el => {
                 const key = el.dataset.langKey;
                 if (translations[lang][key] !== undefined) {
                     el.textContent = translations[lang][key];
-                } else {
-                     console.warn(`Translation key "${key}" not found for language "${lang}" in text content.`);
                 }
             });
             allPlaceholderElements.forEach(el => {
                 const key = el.dataset.langPlaceholder;
-                 if (translations[lang][key] !== undefined) {
+                if (translations[lang][key] !== undefined) {
                     el.placeholder = translations[lang][key];
-                } else {
-                     console.warn(`Translation key "${key}" not found for language "${lang}" in placeholder.`);
                 }
             });
             allAltElements.forEach(el => {
                 const key = el.dataset.langAlt;
-                 if (translations[lang][key] !== undefined) {
+                if (translations[lang][key] !== undefined) {
                     el.alt = translations[lang][key];
-                } else {
-                     console.warn(`Translation key "${key}" not found for language "${lang}" in alt text.`);
                 }
             });
             [langEnBtn, langEnMobileBtn].forEach(btn => btn.classList.toggle('active', lang === 'en'));
             [langFrBtn, langFrMobileBtn].forEach(btn => btn.classList.toggle('active', lang === 'fr'));
             localStorage.setItem('preferredLanguage', lang);
         }
+
         const preferredLanguage = localStorage.getItem('preferredLanguage');
         const browserLang = navigator.language.split('-')[0];
         const initialLang = preferredLanguage || (browserLang === 'fr' ? 'fr' : 'en');
         setLanguage(initialLang);
+
         [langEnBtn, langEnMobileBtn].forEach(btn => btn.addEventListener('click', () => setLanguage('en')));
         [langFrBtn, langFrMobileBtn].forEach(btn => btn.addEventListener('click', () => setLanguage('fr')));
 
@@ -639,13 +764,14 @@
         const mobileMenu = document.getElementById('mobile-menu');
         const openIcon = document.getElementById('menu-open-icon');
         const closeIcon = document.getElementById('menu-close-icon');
+
         menuBtn.addEventListener('click', () => {
             mobileMenu.classList.toggle('hidden');
             openIcon.classList.toggle('hidden');
             closeIcon.classList.toggle('hidden');
         });
-        const mobileLinks = mobileMenu.querySelectorAll('a');
-        mobileLinks.forEach(link => {
+
+        mobileMenu.querySelectorAll('a').forEach(link => {
             link.addEventListener('click', () => {
                 mobileMenu.classList.add('hidden');
                 openIcon.classList.remove('hidden');
@@ -670,21 +796,20 @@
 
         // --- Nav active link on scroll ---
         const sections = document.querySelectorAll('main section[id]');
-        const navLinks = document.querySelectorAll('header nav a[href^="#"]');
+        const navLinks = document.querySelectorAll('header nav a.nav-link');
         const sectionObserver = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     navLinks.forEach(link => {
-                        link.classList.remove('nav-active');
+                        link.classList.remove('nav-active-rb');
                         if (link.getAttribute('href') === '#' + entry.target.id) {
-                            link.classList.add('nav-active');
+                            link.classList.add('nav-active-rb');
                         }
                     });
                 }
             });
         }, { threshold: 0.4 });
         sections.forEach(s => sectionObserver.observe(s));
-
     </script>
 
 </body>
