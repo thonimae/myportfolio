@@ -67,7 +67,7 @@ export default function Hero() {
         <motion.div
           initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, ease, delay: 0.2 }}
+          transition={{ duration: 0.5, ease, delay: 0.05 }}
           className="flex items-center gap-2 mb-12 md:mb-16"
         >
           <span className="relative flex h-1.5 w-1.5">
@@ -81,17 +81,17 @@ export default function Hero() {
 
         {/* Main headline */}
         <div className="mb-8 md:mb-10">
-          <LineReveal delay={0.38}>
+          <LineReveal delay={0.08}>
             <h1 className="font-display font-bold text-display text-text leading-[0.93]">
               {t('heroLine1')}
             </h1>
           </LineReveal>
-          <LineReveal delay={0.50}>
+          <LineReveal delay={0.18}>
             <h1 className="font-display font-bold text-display text-text leading-[0.93]">
               {t('heroLine2')}
             </h1>
           </LineReveal>
-          <LineReveal delay={0.62}>
+          <LineReveal delay={0.28}>
             <h1
               className="font-display font-bold text-display leading-[0.93]"
               style={{ WebkitTextStroke: '1.5px rgba(232,228,220,0.85)', color: 'transparent' }}
@@ -105,7 +105,7 @@ export default function Hero() {
         <motion.p
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, ease, delay: 0.82 }}
+          transition={{ duration: 0.6, ease, delay: 0.42 }}
           className="font-sans text-lead text-text/55 max-w-[520px] mb-10 md:mb-12"
         >
           {t('heroSub')}
@@ -115,7 +115,7 @@ export default function Hero() {
         <motion.div
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, ease, delay: 0.98 }}
+          transition={{ duration: 0.6, ease, delay: 0.55 }}
           className="flex flex-wrap items-center gap-4"
         >
           <a
@@ -147,7 +147,7 @@ export default function Hero() {
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ duration: 0.6, ease, delay: 1.25 }}
+        transition={{ duration: 0.6, ease, delay: 0.7 }}
         className="relative z-10 max-w-[1400px] mx-auto w-full px-6 md:px-10 pb-10 md:pb-14"
       >
         <div
@@ -162,7 +162,7 @@ export default function Hero() {
               [t('stat4v'), t('stat4l')],
             ] as [string, string][]).map(([v, l], i) => (
               <div key={i} className="md:px-8 first:pl-0 last:pr-0">
-                <StatItem value={v} label={l} delay={1.3 + i * 0.08} />
+                <StatItem value={v} label={l} delay={0.72 + i * 0.06} />
               </div>
             ))}
           </div>
