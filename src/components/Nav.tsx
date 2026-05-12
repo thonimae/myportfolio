@@ -49,7 +49,7 @@ export default function Nav() {
       <motion.header
         initial={{ y: -80, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
-        transition={{ duration: 0.8, ease }}
+        transition={{ duration: 0.6, ease, delay: 0 }}
         className="fixed top-0 left-0 right-0 z-[100]"
         style={{
           background: scrolled ? 'rgba(6,6,6,0.88)' : 'transparent',
